@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- HTML Section -->
+    <section class="how-section" id="how">
+      <!-- Background animation container -->
+      <div class="animated-background" id="animatedBg">
+        <!-- Hearts will be created dynamically with JS -->
+      </div>
+
+      <div class="container">
+        <div class="section-header">
+          <h5 class="cate">Describe Your App</h5>
+          <h2 class="title">Let's See How It Work</h2>
+          <p>It's easier than you think. Follow 3 simple easy steps</p>
+        </div>
+        <div class="row" id="justify-set">
+          <div class="col-lg-4 col-sm-6 col-xl-3">
+            <div class="how-item">
+              <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+              <div class="how-thumb" data-count="1">
+                <img src="assets/images/how/how1.png" alt="Download App" />
+              </div>
+              <div class="how-content">
+                <a href="#0" class="button-3">Download App</a>
+                <div class="download-indicator"></div>
+                <ul class="download-options">
+                  <li>
+                    <a href="#0"><i class="fab fa-windows"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0" class="active"><i class="fab fa-apple"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0"><i class="fab fa-android"></i></a>
+                  </li>
+                </ul>
+                <p>
+                  Download App either for Windows, Mac or Android and get stated
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-xl-3">
+            <div class="how-item">
+              <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+              <div class="how-thumb" data-count="2">
+                <img src="assets/images/how/how2.png" alt="Create Account" />
+              </div>
+              <div class="how-content">
+                <a href="#0" class="button-3">Create Account</a>
+                <div class="download-indicator"></div>
+                <ul class="download-options">
+                  <li>
+                    <a href="#0"><i class="fab fa-windows"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0" class="active"><i class="fab fa-apple"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0"><i class="fab fa-android"></i></a>
+                  </li>
+                </ul>
+                <p>
+                  Sign up for Tether Heart account. One account for all devices
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 col-xl-3">
+            <div class="how-item">
+              <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+              </div>
+              <div class="how-thumb" data-count="3">
+                <img src="assets/images/how/how3.png" alt="Enjoy The App" />
+              </div>
+              <div class="how-content">
+                <a href="#0" class="button-3">Enjoy The App</a>
+                <div class="download-indicator"></div>
+                <ul class="download-options">
+                  <li>
+                    <a href="#0"><i class="fab fa-windows"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0" class="active"><i class="fab fa-apple"></i></a>
+                  </li>
+                  <li>
+                    <a href="#0"><i class="fab fa-android"></i></a>
+                  </li>
+                </ul>
+                <p>
+                  Have any questions check our <a href="#0">FAQs</a> Explore and
+                  share Tether Heart
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CSS Styles -->
+    <style>
+      .how-section {
+        position: relative;
+        padding: 80px 0;
+        overflow: hidden;
+        perspective: 1200px;
+      }
+
+      /* Animated background with 3D space */
+      .animated-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+        transform-style: preserve-3d;
+      }
+
+      /* IMPROVED HEART SHAPE STYLING */
+      .bg-heart {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0;
+        transform-style: preserve-3d;
+        /* Use SVG mask instead of pseudo-elements for better heart shape */
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background: var(
+          --heart-color,
+          linear-gradient(
+            to bottom,
+            rgba(226, 58, 153, 0.6),
+            rgba(255, 107, 157, 0.6)
+          )
+        );
+      }
+
+      /* Size variations for 3D hearts */
+      .bg-heart.size-1 {
+        width: 20px;
+        height: 20px;
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+
+      .bg-heart.size-2 {
+        width: 30px;
+        height: 30px;
+        filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+      }
+
+      .bg-heart.size-3 {
+        width: 45px;
+        height: 45px;
+        filter: drop-shadow(3px 6px 6px rgba(0, 0, 0, 0.3));
+      }
+
+      /* 3D heart animation */
+      @keyframes float3dHeart {
+        0% {
+          transform: translate3d(0, 100px, 0) rotate(0deg) scale(0.5)
+            rotateY(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.8;
+          transform: translate3d(0, 50px, 20px) rotate(20deg) scale(0.7)
+            rotateY(20deg);
+        }
+        40% {
+          transform: translate3d(-20px, 0px, 30px) rotate(80deg) scale(0.9)
+            rotateY(40deg);
+        }
+        70% {
+          transform: translate3d(20px, -100px, 40px) rotate(180deg) scale(1)
+            rotateY(-30deg);
+          opacity: 0.7;
+        }
+        90% {
+          transform: translate3d(-10px, -150px, 20px) rotate(270deg) scale(0.8)
+            rotateY(20deg);
+          opacity: 0.4;
+        }
+        100% {
+          transform: translate3d(0, -200px, 0) rotate(360deg) scale(0.5)
+            rotateY(0deg);
+          opacity: 0;
+        }
+      }
+
+      /* Side-to-side floating */
+      @keyframes float3dSideways {
+        0% {
+          margin-left: -15px;
+          transform: rotateY(-20deg);
+        }
+        50% {
+          margin-left: 15px;
+          transform: rotateY(20deg);
+        }
+        100% {
+          margin-left: -15px;
+          transform: rotateY(-20deg);
+        }
+      }
+
+      /* Heart burst effects */
+      .bg-burst {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0;
+      }
+
+      /* Softer heart burst animation */
+      @keyframes bgHeartBurst {
+        0% {
+          transform: scale(0);
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.3;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-header .cate {
+        color: #e23a99;
+        font-size: 18px;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .how-section .section-header .title {
+        font-size: 36px;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      .how-item {
+        margin-bottom: 40px;
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+      }
+
+      .how-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .how-thumb {
+        position: relative;
+        margin-bottom: 30px;
+        transition: transform 0.5s ease;
+      }
+
+      .how-item:hover .how-thumb {
+        transform: scale(1.05);
+      }
+
+      .how-thumb::before {
+        position: absolute;
+        content: attr(data-count);
+        border-radius: 46px 43px 68px 38px;
+        height: 70px;
+        width: 68px;
+        line-height: 70px;
+        background: linear-gradient(
+          0deg,
+          rgb(226, 144, 110) 0%,
+          rgb(232, 58, 153) 100%
+        );
+        box-shadow: 5.806px 23.287px 30.72px 1.28px rgba(232, 58, 153, 0.5);
+        color: #ffffff;
+        font-size: 54px;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        animation: pulse 2s infinite;
+      }
+
+      .how-thumb img {
+        max-width: 100%;
+      }
+
+      .how-content {
+        position: relative;
+      }
+
+      .button-3 {
+        margin-bottom: 25px;
+        font-size: 16px;
+        padding: 15px 0;
+        display: block;
+        text-decoration: none;
+        background: linear-gradient(
+          -127deg,
+          rgb(93, 39, 198) 29%,
+          rgb(46, 52, 255) 100%
+        );
+        color: white;
+        border-radius: 30px;
+        font-weight: bold;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .button-3:hover {
+        transform: scale(1.05);
+      }
+
+      .button-3::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(30deg);
+        opacity: 0;
+        transition: transform 0.6s ease, opacity 0.6s ease;
+      }
+
+      .button-3:hover::after {
+        transform: rotate(30deg) translate(10%, 10%);
+        opacity: 1;
+      }
+
+      .download-options {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 28px;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .download-options li a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        display: inline-block;
+        border-radius: 50%;
+        background: #f0f0f0;
+        color: #666;
+        transition: all 0.3s ease;
+      }
+
+      .download-options li a.active,
+      .download-options li a:hover {
+        background: linear-gradient(
+          -127deg,
+          rgb(93, 39, 198) 29%,
+          rgb(46, 52, 255) 100%
+        );
+        box-shadow: 0px 5px 15px rgba(47, 105, 252, 0.47);
+        color: white;
+        transform: translateY(-5px);
+      }
+
+      /* Animation for the counters */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(232, 58, 153, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(232, 58, 153, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(232, 58, 153, 0);
+        }
+      }
+
+      /* Download indicator */
+      .download-indicator {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          rgb(93, 39, 198) 0%,
+          rgb(232, 58, 153) 50%,
+          rgb(246, 211, 101) 100%
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .button-3:hover + .download-indicator {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+
+      /* Particles inside items */
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* IMPROVED PARTICLE HEART SHAPE TO MATCH SVG STYLE */
+      .particle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        z-index: 2;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background: linear-gradient(to bottom, #e23a99, #ff6b9d);
+        filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.2));
+      }
+
+      #justify-set {
+        justify-content: space-between;
+      }
+    </style>
+
+    <!-- JavaScript for the 3D Hearts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Background animation
+        const animatedBg = document.getElementById('animatedBg');
+        const sectionHeight =
+          document.querySelector('.how-section').clientHeight;
+        const sectionWidth = document.querySelector('.how-section').clientWidth;
+
+        // Enhanced heart color variations
+        const heartColors = [
+          { hue: 330, saturation: 85, lightness: 70 }, // Pink
+          { hue: 345, saturation: 80, lightness: 65 }, // Darker pink
+          { hue: 355, saturation: 75, lightness: 75 }, // Light red
+          { hue: 320, saturation: 70, lightness: 75 }, // Purple-pink
+          { hue: 0, saturation: 80, lightness: 70 }, // Red
+        ];
+
+        // Create floating background hearts - REDUCED QUANTITY
+        function createBackgroundHearts() {
+          // Create fewer hearts initially (reduced from 120 to 40)
+          for (let i = 0; i < 40; i++) {
+            setTimeout(() => {
+              create3DFloatingHeart();
+            }, i * 200); // Slower creation speed
+          }
+
+          // Continue creating hearts at a slower pace (increased interval from 500ms to 1200ms)
+          setInterval(create3DFloatingHeart, 1200);
+        }
+
+        function create3DFloatingHeart() {
+          const heart = document.createElement('div');
+          heart.className = 'bg-heart';
+
+          // Random size category (1-3)
+          const sizeCategory = Math.floor(Math.random() * 3) + 1;
+          heart.classList.add(`size-${sizeCategory}`);
+
+          // Random position
+          const posX = Math.floor(Math.random() * sectionWidth);
+          const posY = Math.floor(Math.random() * sectionHeight);
+
+          // Duration varies by size (larger hearts move slower)
+          const baseDuration = 15;
+          const duration = baseDuration + sizeCategory * 2; // 17-21s
+
+          // Random delay
+          const delay = Math.floor(Math.random() * 4);
+
+          // Position the heart
+          heart.style.left = `${posX}px`;
+          heart.style.top = `${posY}px`;
+
+          // Set z-index based on size for proper layering
+          heart.style.zIndex = sizeCategory;
+
+          // Opacity based on size (larger hearts are more visible)
+          const baseOpacity = 0.4; // Reduced base opacity from 0.5 to 0.4
+          const opacity = baseOpacity + sizeCategory * 0.1; // 0.5-0.7
+
+          // Select a random color palette and apply variation
+          const colorSet =
+            heartColors[Math.floor(Math.random() * heartColors.length)];
+          const hue = colorSet.hue + (Math.random() * 10 - 5);
+          const saturation = colorSet.saturation + (Math.random() * 10 - 5);
+          const lightness = colorSet.lightness + (Math.random() * 10 - 5);
+
+          // Apply color as CSS variable
+          heart.style.setProperty(
+            '--heart-color',
+            `linear-gradient(to bottom, 
+          hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity}),
+          hsla(${hue - 10}, ${saturation - 5}%, ${
+              lightness - 10
+            }%, ${opacity}))`
+          );
+
+          // Apply 3D rotation
+          const rotateX = Math.random() * 40 - 20;
+          const rotateY = Math.random() * 40 - 20;
+          const rotateZ = Math.random() * 360;
+
+          heart.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateZ(${
+            sizeCategory * 10
+          }px)`;
+
+          // Apply animations
+          heart.style.animation = `float3dHeart ${duration}s ease-in-out ${delay}s forwards, 
+                                 float3dSideways ${
+                                   duration / 4
+                                 }s ease-in-out ${delay}s infinite`;
+
+          // Add to background
+          animatedBg.appendChild(heart);
+
+          // Remove after animation completes
+          setTimeout(() => {
+            heart.remove();
+          }, (duration + delay) * 1000);
+        }
+
+        // Create burst effects randomly - REDUCED FREQUENCY
+        function createRandomBursts() {
+          setInterval(() => {
+            createHeartBurst();
+          }, 8000); // Less frequent bursts (increased from 5000ms to 8000ms)
+        }
+
+        function createHeartBurst() {
+          const burst = document.createElement('div');
+          burst.className = 'bg-burst';
+
+          // Random position within viewport
+          const posX = Math.floor(Math.random() * sectionWidth);
+          const posY = Math.floor(Math.random() * sectionHeight);
+          const size = Math.floor(Math.random() * 80) + 80; // 80-160px
+
+          // Apply styles
+          burst.style.width = `${size}px`;
+          burst.style.height = `${size}px`;
+          burst.style.left = `${posX - size / 2}px`;
+          burst.style.top = `${posY - size / 2}px`;
+
+          // Random color variations
+          const colorSet =
+            heartColors[Math.floor(Math.random() * heartColors.length)];
+          burst.style.background = `radial-gradient(circle,
+          hsla(${colorSet.hue}, ${colorSet.saturation}%, ${colorSet.lightness}%, 0.5) 0%, 
+          hsla(${colorSet.hue}, ${colorSet.saturation}%, ${colorSet.lightness}%, 0) 70%)`;
+
+          // Animate
+          burst.style.animation = 'bgHeartBurst 1.8s ease-out forwards';
+
+          // Add to background
+          animatedBg.appendChild(burst);
+
+          // Remove after animation completes
+          setTimeout(() => {
+            burst.remove();
+          }, 1800);
+        }
+
+        // Item animations
+        function animateItemParticles() {
+          const items = document.querySelectorAll('.how-item');
+
+          items.forEach((item) => {
+            const particles = item.querySelectorAll('.particle');
+
+            // Initial animation
+            setTimeout(() => {
+              particles.forEach((particle, index) => {
+                setTimeout(() => {
+                  animateParticle(particle);
+                }, index * 200);
+              });
+
+              // Set interval for repeated animations
+              setInterval(() => {
+                particles.forEach((particle, index) => {
+                  setTimeout(() => {
+                    animateParticle(particle);
+                  }, index * 200);
+                });
+              }, 5000);
+            }, 1000);
+          });
+        }
+
+        function animateParticle(particle) {
+          // Random position and size
+          const randX = Math.floor(Math.random() * 80) + 10; // 10-90%
+          const randSize = Math.floor(Math.random() * 15) + 10; // 10-25px
+          const randDuration = Math.floor(Math.random() * 3) + 3; // 3-6s
+
+          // Set the width and height for the particle
+          particle.style.width = `${randSize}px`;
+          particle.style.height = `${randSize}px`;
+          particle.style.left = `${randX}%`;
+          particle.style.bottom = '10%';
+
+          // Reset any existing animation
+          particle.style.animation = 'none';
+          particle.offsetHeight; // Trigger reflow
+
+          // Create floating animation
+          particle.style.opacity = '1';
+          particle.style.animation = `float3dHeart ${randDuration}s ease-in-out`;
+
+          // Reset after animation
+          setTimeout(() => {
+            particle.style.opacity = '0';
+            particle.style.animation = 'none';
+          }, randDuration * 1000);
+        }
+
+        // Button interactions
+        const buttons = document.querySelectorAll('.button-3');
+        buttons.forEach((button) => {
+          button.addEventListener('mouseenter', function () {
+            const item = this.closest('.how-item');
+            const particles = item.querySelectorAll('.particle');
+
+            // Animate particles
+            particles.forEach((particle, index) => {
+              setTimeout(() => {
+                animateParticle(particle);
+              }, index * 100);
+            });
+          });
+        });
+
+        // Platform icon interactions
+        const downloadOptions = document.querySelectorAll(
+          '.download-options li a'
+        );
+        downloadOptions.forEach((option) => {
+          option.addEventListener('mouseenter', function () {
+            this.classList.add('active');
+          });
+
+          option.addEventListener('mouseleave', function () {
+            if (!this.classList.contains('permanent-active')) {
+              this.classList.remove('active');
+            }
+          });
+
+          option.addEventListener('click', function (e) {
+            e.preventDefault();
+            const allOptions =
+              this.closest('.download-options').querySelectorAll('li a');
+            allOptions.forEach((opt) => {
+              opt.classList.remove('permanent-active');
+              opt.classList.remove('active');
+            });
+            this.classList.add('permanent-active');
+            this.classList.add('active');
+
+            // Show download animation
+            const downloadIndicator = this.closest(
+              '.how-content'
+            ).querySelector('.download-indicator');
+            downloadIndicator.style.opacity = '1';
+            downloadIndicator.style.transform = 'scaleX(1)';
+
+            setTimeout(() => {
+              downloadIndicator.style.opacity = '0';
+              downloadIndicator.style.transform = 'scaleX(0)';
+            }, 2000);
+          });
+        });
+
+        // Initialize animations
+        createBackgroundHearts();
+        createRandomBursts();
+        animateItemParticles();
+      });
+    </script>
+  </body>
+</html>

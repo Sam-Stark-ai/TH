@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from softivuspro.com/mosto/demo/ltr/light/blog-single-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Mar 2025 10:07:34 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Tether Heart</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/owl.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body data-spy="scroll" data-target="#faq-menu" data-offset="150">
+    <!--============= ScrollToTop Section Starts Here =============-->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <a href="#0" id="show-whatssapp">
+      <img src="./assets/images/tethar-image/whats-app-logo.svg" alt="" />
+    </a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here =============-->
+    
+    <!-- Fixed Chatbot Container -->
+    <div class="xchat-fixed-container" id="xchatFixedContainer">
+      <!-- Chatbot Button -->
+      <button class="xchat-main-btn" id="xchatMainBtn">
+                        <svg class="xchat-btn-icon" viewBox="0 0 24 24">
+                            <path d="M12,3C17.5,3 22,6.58 22,11C22,15.42 17.5,19 12,19C10.76,19 9.57,18.82 8.47,18.5C5.55,21 2,21 2,21C4.33,18.67 4.7,17.1 4.75,16.5C3.05,15.07 2,13.13 2,11C2,6.58 6.5,3 12,3Z"/>
+                        </svg>
+                        <div class="xchat-notification" id="xchatNotification">3</div>
+                </button>
+    
+      <!-- Chat Window -->
+      <div class="xchat-window" id="xchatWindow">
+        <!-- Chat Header -->
+        <div class="xchat-header">
+          <div class="xchat-header-info">
+            <div class="xchat-avatar">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12,2A2,2 0 0,1 14,4C14,5.5 13.5,6.5 13,7H15A1,1 0 0,1 16,8V10A1,1 0 0,1 15,11H13.5C13.8,11.8 14,12.4 14,13A4,4 0 0,1 10,17H8A2,2 0 0,1 6,15V13C6,12.4 6.2,11.8 6.5,11H5A1,1 0 0,1 4,10V8A1,1 0 0,1 5,7H7C6.5,6.5 6,5.5 6,4A2,2 0 0,1 8,2H12M12,4H8C8,5 8.5,5.5 9,6H11C11.5,5.5 12,5 12,4Z" />
+              </svg>
+            </div>
+            <div class="xchat-header-text">
+              <h3>AI Assistant</h3>
+              <div class="xchat-status">
+                <div class="xchat-status-dot"></div>
+                Online
+              </div>
+            </div>
+          </div>
+          <button class="xchat-close" id="xchatClose">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                                </svg>
+                            </button>
+        </div>
+    
+        <!-- Chat Messages -->
+        <div class="xchat-messages" id="xchatMessages">
+          <div class="xchat-message xchat-bot">
+            <div class="xchat-message-bubble">
+              👋 Hello! I'm your AI assistant. How can I help you today?
+              <div class="xchat-message-time">Just now</div>
+            </div>
+          </div>
+    
+          <div class="xchat-quick-replies">
+            <button class="xchat-quick-reply" onclick="xchatSendQuickReply('Tell me about your services')">Services</button>
+            <button class="xchat-quick-reply" onclick="xchatSendQuickReply('I need help')">Help</button>
+            <button class="xchat-quick-reply" onclick="xchatSendQuickReply('Contact support')">Support</button>
+          </div>
+        </div>
+    
+        <!-- Chat Input -->
+        <div class="xchat-input-area">
+          <div class="xchat-input-container">
+            <textarea class="xchat-input" id="xchatInput" placeholder="Type your message..." rows="1"></textarea>
+            <button class="xchat-send-btn" id="xchatSendBtn">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                                    </svg>
+                                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Fixed Button Container -->
+    <div class="xpurple-fixed-btn-container" id="xpurpleFixedBtn">
+      <!-- Main Button -->
+      <button class="xpurple-main-btn" id="xpurpleMainBtn">
+        <svg class="xpurple-btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#ffffff">
+          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.02 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5zm3 2h2v2h-2v2h-2v-2h-2v-2h2v-2h2v2z"/>
+        </svg>
+      </button>
+    
+      <!-- Dropdown Menu -->
+      <div class="xpurple-dropdown" id="xpurpleDropdown">
+        <button class="xpurple-dropdown-btn" id="xpurpleSignupBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z"/>
+                                </svg>
+                                Sign UP
+                            </button>
+        <button class="xpurple-dropdown-btn" id="xpurpleLoginBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M10,17V14H3V10H10V7L15,12L10,17M10,2H19A2,2 0 0,1 21,4V20A2,2 0 0,1 19,22H10A2,2 0 0,1 8,20V18H10V20H19V4H10V6H8V4A2,2 0 0,1 10,2Z"/>
+                                </svg>
+                                Login
+                            </button>
+      </div>
+    </div>
+    
+    <!-- Sign Up Modal -->
+    <div class="xpurple-modal-overlay" id="xpurpleSignupModal">
+      <div class="xpurple-modal">
+        <button class="xpurple-modal-close" id="xpurpleSignupClose">&times;</button>
+        <h2 class="xpurple-modal-title">Create Account</h2>
+        <form class="xpurple-signup-form" id="xpurpleSignupForm">
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleSignupName">Full Name</label>
+            <input type="text" class="xpurple-form-input" id="xpurpleSignupName" required>
+          </div>
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleSignupEmail">Email Address</label>
+            <input type="email" class="xpurple-form-input" id="xpurpleSignupEmail" required>
+          </div>
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleSignupPassword">Password</label>
+            <input type="password" class="xpurple-form-input" id="xpurpleSignupPassword" required>
+          </div>
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleSignupConfirm">Confirm Password</label>
+            <input type="password" class="xpurple-form-input" id="xpurpleSignupConfirm" required>
+          </div>
+          <button type="submit" class="xpurple-form-submit">Create Account</button>
+          <div class="xpurple-form-link">
+            Already have an account? <a href="#" id="xpurpleToLogin">Sign In</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Login Modal -->
+    <div class="xpurple-modal-overlay" id="xpurpleLoginModal">
+      <div class="xpurple-modal">
+        <button class="xpurple-modal-close" id="xpurpleLoginClose">&times;</button>
+        <h2 class="xpurple-modal-title">Welcome Back</h2>
+        <form class="xpurple-login-form" id="xpurpleLoginForm">
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleLoginEmail">Email Address</label>
+            <input type="email" class="xpurple-form-input" id="xpurpleLoginEmail" required>
+          </div>
+          <div class="xpurple-form-group">
+            <label class="xpurple-form-label" for="xpurpleLoginPassword">Password</label>
+            <input type="password" class="xpurple-form-input" id="xpurpleLoginPassword" required>
+          </div>
+          <button type="submit" class="xpurple-form-submit">Sign In</button>
+          <div class="xpurple-form-link">
+            Don't have an account? <a href="#" id="xpurpleToSignup">Create Account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <!--============= Header Section Starts Here =============-->
+    <header class="header-section">
+      <div class="elegnews-container" id="elegnews-main">
+        <!-- <div class="elegnews-header">
+          <div class="elegnews-logo">
+            <div class="elegnews-logo-icon">N</div>
+            <div class="elegnews-logo-text">NewsWire</div>
+          </div>
+          <div class="elegnews-live-indicator">
+            <div class="elegnews-pulse-dot"></div>
+            <span>LIVE</span>
+          </div>
+        </div> -->
+
+        <div class="elegnews-ticker-wrapper">
+          <div class="elegnews-ticker-container">
+            <!-- <div class="elegnews-breaking-badge">BREAKING</div> -->
+            <div class="elegnews-ticker-content" id="elegnews-ticker">
+              <span class="elegnews-news-item">
+                <span class="elegnews-news-time">2:45 PM</span>
+                Share love, emotions & wellbeing with TetherHeart
+              </span>
+              <span class="elegnews-news-item">
+                <span class="elegnews-news-time">2:30 PM</span>
+                Share love, emotions & wellbeing with TetherHeart
+              </span>
+              <span class="elegnews-news-item">
+                <span class="elegnews-news-time">2:15 PM</span>
+                Share love, emotions & wellbeing with TetherHeart
+              </span>
+              <span class="elegnews-news-item">
+                <span class="elegnews-news-time">2:00 PM</span>
+                Share love, emotions & wellbeing with TetherHeart
+              </span>
+              <span class="elegnews-news-item">
+                <span class="elegnews-news-time">1:45 PM</span>
+                Share love, emotions & wellbeing with TetherHeart
+              </span>
+            </div>
+          </div>
+
+          <div class="elegnews-controls">
+            <button
+              class="elegnews-control-btn"
+              id="elegnews-pause-btn"
+              title="Pause/Resume"
+            >
+              ⏸
+            </button>
+            <button
+              class="elegnews-control-btn"
+              id="elegnews-speed-btn"
+              title="Speed"
+            >
+              1x
+            </button>
+          </div>
+
+          <div class="elegnews-gradient-overlay"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="header-wrapper">
+          <div class="logo">
+            <a href="#">
+              <img src="assets/images/tethar-image/tether gif.gif" alt="logo" />
+            </a>
+          </div>
+          <ul class="menu">
+            <li>
+              <a href="/index.html">Home</a>
+              <!-- <ul class="submenu">
+                            <li>
+                                <a href="#0">Home Apps</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="#">Mobile App 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-2.html">Mobile App 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-3.html">Mobile App 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-4.html">Mobile App 4</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0">Home Messenger</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="index-5.html">Messenger 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-6.html">Messenger 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0">Home Web</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="index-7.html">Web 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-8.html">Web 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0">Home Dextop</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="index-9.html">Dextop 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-10.html">Dextop 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-11.html">Dextop 3</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0">Home Watchapp</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="index-12.html">Watchapp 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-13.html">Watchapp 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#0">Home Hero Video</a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="index-14.html">Hero Video 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="index-15.html">Hero Video 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="index-16.html">Home 16</a>
+                            </li>
+                            <li>
+                                <a href="index-17.html">Home 17 <span class="badge badge-primary align-self-center">New</span></a>
+                            </li>
+                            <li>
+                                <a href="index-18.html">Home 18 <span class="badge badge-primary align-self-center">New</span></a>
+                            </li>
+                            <li>
+                                <a href="index-19.html">Home 19 <span class="badge badge-primary align-self-center">New</span></a>
+                            </li>
+                            <li>
+                                <a href="index-20.html">Home 20 <span class="badge badge-primary align-self-center">New</span></a>
+                            </li>
+                        </ul> -->
+            </li>
+            <li>
+              <a>Gift feature</a>
+              <ul class="submenu">
+                <li>
+                  <a href="#" id="giftSendButton">Tether family</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="/about.html">About Us</a>
+            </li>
+            <li>
+              <a href="/feature.html">Feature</a>
+              <!--<ul class="submenu">
+                            <li>
+                                <a href="#">Feature 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Feature 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Feature 3</a>
+                            </li>
+                        </ul> -->
+            </li>
+            <li>
+              <a href="/pricing-plan.html">Pricing</a>
+            </li>
+
+            <li>
+              <a href="/blog.html">Blog</a>
+              <!-- <ul class="submenu">
+                            <li>
+                                <a href="blog.html">blog style 1</a>
+                            </li>
+                            <li>
+                                <a href="blog-type-two.html">blog style 1</a>
+                            </li>
+                            <li>
+                                <a href="blog-single-1.html">blog Single 1</a>
+                            </li>
+                            <li>
+                                <a href="blog-single-2.html">blog Single 2</a>
+                            </li>
+                        </ul> -->
+            </li>
+            <li>
+              <a href="/contact.html">contact</a>
+            </li>
+            <li class="d-sm-none">
+              <a href="#" class="m-0 header-button">Get Tether Heart</a>
+            </li>
+          </ul>
+          <div class="header-bar d-lg-none">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="header-right">
+            <!-- <select class="select-bar">
+              <option value="en">En</option>
+              <option value="Bn">Bn</option>
+              <option value="pk">Pk</option>
+              <option value="Fr">Fr</option>
+            </select> -->
+            <a href="#0" class="header-button d-none d-sm-inline-block"
+              >Get Tether Heart</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <!--============= Header Section Ends Here =============-->
+    <section class="page-header single-header blog-single-header bg_img oh" data-background="assets/images/blog/page-header.jpg">
+        <div class="bottom-shape">
+            <img src="assets/css/img/page-header2.png" alt="css">
+        </div>
+    </section>
+    <!--============= Header Section Ends Here =============-->
+
+
+    
+    <!--============= Blog Section Starts Here =============-->
+    <section class="blog-single-section padding-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <article>
+                        <div class="post-details">
+                            <div class="post-inner">
+                                <div class="post-header">
+                                    <div class="meta-post">
+                                        <a href="#0" class="read">2 days ago</a>
+                                        <a href="#0" class="read">3 min read</a>
+                                    </div>
+                                    <h3 class="title">
+                                       Do You Need to Know Everything About Hybrid App Development for Smart Rings?
+                                    </h3>
+                                </div>
+                                <div class="post-content">
+                                    <div class="entry-meta">
+                                        <div class="thumb">
+                                            <a href="#0">
+                                                <img src="assets/images/blog/author2.png" alt="blog">
+                                            </a>
+                                        </div>
+                                        <a href="#0" class="comment">
+                                            <i class="flaticon-chat-1"></i>
+                                            <span>30</span>
+                                        </a>
+                                        <a href="#0" class="comment">
+                                            <i class="flaticon-share"></i>
+                                            <span>22</span>
+                                        </a>
+                                    </div>
+                                    <div class="entry-content">
+                                        <p>When it comes to building a seamless experience for couples using smart rings, the app behind the scenes is just as important as the hardware. That’s where hybrid app development comes into play.</p>
+                                        <p>Hybrid mobile apps function just like any other app on your phone—they install easily, are available in app stores, and can connect you to features like shared wellness insights, emotional check-ins, or private messages with your partner. But what makes them “hybrid” is how they’re built.</p>
+                                        <img src="assets/images/blog/blog-detail.jpg" alt="blog">
+                                        <p>At the end of the day, most users won’t care whether your app was built using native code or hybrid frameworks. What truly matters is how it feels—how smoothly it runs, how quickly it connects, and how effortlessly it supports their relationship. For us, a great hybrid app isn’t just about the tech—it’s about delivering an experience that feels personal, reliable, and meaningful. If it helps couples stay emotionally connected and makes their daily lives better, that’s what makes it a success.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tags-area">
+                                <div class="tags">
+                                    <span>
+                                        Tags : 
+                                    </span>
+                                    <div class="tags-item">
+                                        <a href="#0"> Tickets </a>
+                                        <a href="#0"> Coming Soon </a>
+                                        <a href="#0"> Movies </a>
+                                    </div>
+                                </div>
+                                <ul class="social-icons">
+                                    <li>
+                                        <a href="#0">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0" class="active">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+                                            <i class="fab fa-pinterest"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+                                            <i class="fab fa-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="blog-comment">
+                            <h5 class="title">comments</h5>
+                            <ul class="comment-area">
+                                <li>
+                                    <div class="blog-item">
+                                        <div class="blog-thumb">
+                                            <a href="#0">
+                                                <img src="assets/images/blog/author2.png" alt="blog">
+                                            </a>
+                                        </div>
+                                        <div class="blog-thumb-info">
+                                            <span>13 days ago</span>
+                                            <h6 class="title"><a href="#0">carl morgan</a></h6>
+                                        </div>
+                                        <div class="blog-content">
+                                            <p>
+                                                Smart rings are redefining what it means to feel close—even when you're miles apart. Discover how emotional tracking and shared insights are shaping the future of couple-focused tech.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="blog-item">
+                                                <div class="blog-thumb">
+                                                    <a href="#0">
+                                                        <img src="assets/images/blog/author1.png" alt="blog">
+                                                    </a>
+                                                </div>
+                                                <div class="blog-thumb-info">
+                                                    <span>13 days ago</span>
+                                                    <h6 class="title"><a href="#0">john flores</a></h6>
+                                                </div>
+                                                <div class="blog-content">
+                                                    <p>
+                                                        It’s not just about steps and stats. Learn how micro-interactions powered by wearable devices are helping couples build stronger emotional bonds every day.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="blog-item">
+                                        <div class="blog-thumb">
+                                            <a href="#0">
+                                                <img src="assets/images/blog/author3.png" alt="blog">
+                                            </a>
+                                        </div>
+                                        <div class="blog-thumb-info">
+                                            <span>13 days ago</span>
+                                            <h6 class="title"><a href="#0">David Warner</a></h6>
+                                        </div>
+                                        <div class="blog-content">
+                                            <p>
+                                                Your partner doesn’t care how the app was built—they care how it works. Here’s why hybrid apps are the key to creating fast, reliable, love-centered user experiences.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="leave-comment">
+                                <h5 class="title">leave comment</h5>
+                                <form class="blog-form">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Enter Your Full Name" required name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Enter Your Email Address" required name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea placeholder="Write A Message" required name="message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Submit Now">
+                                    </div>
+                                </form>
+                            </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--============= Blog Section Ends Here =============-->
+
+            <div class="giftExperience-container">
+        
+          <!-- Gift Modal -->
+          <div class="giftModal-overlay" id="giftModalOverlay">
+            <div class="giftModal-container">
+              <!-- Modal Header -->
+              <div class="giftModal-header">
+                <button class="giftModal-closeButton" id="giftModalClose">
+                          <i class="fas fa-times"></i>
+                        </button>
+                <div class="giftModal-headerContent">
+                  <div class="giftModal-headerIcon">
+                    <i class="fas fa-gift"></i>
+                  </div>
+                  <h2 class="giftModal-title">Choose Your Gift Journey</h2>
+                  <p class="giftModal-subtitle">
+                    Select the perfect duration for your thoughtful gesture
+                  </p>
+                </div>
+              </div>
+        
+              <!-- Package Selection -->
+            <div class="giftModal-packageSection" id="giftPackageSection">
+              <div class="giftPackages-grid">
+                <!-- Three Rings Package -->
+                <div class="giftPackage-card" data-package="quarterly">
+                  <div class="giftPackage-iconWrapper giftPackage-quarterly">
+                    <i class="fas fa-calendar-alt"></i>
+                  </div>
+                  <h3 class="giftPackage-name">Quarterly Rhythm</h3>
+                  <p class="giftPackage-duration">3 Rings</p>
+                  <p class="giftPackage-description">
+                    A compact gift box featuring three Tether Heart Rings
+                  </p>
+                  <div class="giftPackage-features">
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Includes 3 Rings</span
+                    >
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Choose Male/Female Ring Count</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Four Rings Package -->
+                <div class="giftPackage-card" data-package="seasonal">
+                  <div class="giftPackage-iconWrapper giftPackage-seasonal">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <h3 class="giftPackage-name">Seasonal Sync</h3>
+                  <p class="giftPackage-duration">4 Rings</p>
+                  <p class="giftPackage-description">
+                    A balanced set of four Tether Heart Rings for meaningful gifting
+                  </p>
+                  <div class="giftPackage-features">
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Includes 4 Rings</span
+                    >
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Choose Male/Female Ring Count</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Five Rings Package -->
+                <div class="giftPackage-card" data-package="annual">
+                  <div class="giftPackage-iconWrapper giftPackage-annual">
+                    <i class="fas fa-crown"></i>
+                  </div>
+                  <h3 class="giftPackage-name">Annual Harmony</h3>
+                  <p class="giftPackage-duration">5 Rings</p>
+                  <p class="giftPackage-description">
+                    Five Tether Heart Rings in one elegant gift box
+                  </p>
+                  <div class="giftPackage-features">
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Includes 5 Rings</span
+                    >
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Choose Male/Female Ring Count</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Six Rings Package -->
+                <div class="giftPackage-card" data-package="connected">
+                  <div class="giftPackage-iconWrapper giftPackage-connected">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <h3 class="giftPackage-name">Connected Six</h3>
+                  <p class="giftPackage-duration">6 Rings</p>
+                  <p class="giftPackage-description">
+                    The complete connection six Tether Heart Rings in one special box
+                  </p>
+                  <div class="giftPackage-features">
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Includes 6 Rings</span
+                    >
+                    <span class="giftFeature-item"
+                      ><i class="fas fa-check"></i> Choose Male/Female Ring Count</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+              <!-- Gift Form -->
+              <div class="giftModal-formSection" id="giftFormSection" style="display: none">
+                <div class="giftForm-header">
+                  <button class="giftForm-backButton" id="giftFormBack">
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Change Package</span>
+                          </button>
+                  <h3 class="giftForm-title" id="giftFormTitle">
+                    Complete Your Gift
+                  </h3>
+                </div>
+        
+                <form class="giftForm-container" id="giftForm">
+                  <!-- Recipient Information -->
+                  <div class="giftForm-section">
+                    <h4 class="giftForm-sectionTitle">
+                      <i class="fas fa-user"></i>
+                      Recipient Information
+                    </h4>
+                    <div class="giftForm-row">
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Full Name</label>
+                        <input
+                                  type="text"
+                                  class="giftForm-input"
+                                  name="recipientName"
+                                  placeholder="Recipient's full name"
+                                  required
+                                />
+                      </div>
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Email Address</label>
+                        <input
+                                  type="email"
+                                  class="giftForm-input"
+                                  name="recipientEmail"
+                                  placeholder="recipient@email.com"
+                                  required
+                                />
+                      </div>
+                    </div>
+                    <div class="giftForm-row">
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Phone Number</label>
+                        <input
+                                  type="tel"
+                                  class="giftForm-input"
+                                  name="recipientPhone"
+                                  placeholder="+1 (555) 123-4567"
+                                />
+                      </div>
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Delivery Date</label>
+                        <input
+                                  type="date"
+                                  class="giftForm-input"
+                                  name="deliveryDate"
+                                  required
+                                />
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Sender Information -->
+                  <div class="giftForm-section">
+                    <h4 class="giftForm-sectionTitle">
+                      <i class="fas fa-credit-card"></i>
+                      Your Information
+                    </h4>
+                    <div class="giftForm-row">
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Your Name</label>
+                        <input
+                                  type="text"
+                                  class="giftForm-input"
+                                  name="senderName"
+                                  placeholder="Your full name"
+                                  required
+                                />
+                      </div>
+                      <div class="giftForm-field">
+                        <label class="giftForm-label">Your Email</label>
+                        <input
+                                  type="email"
+                                  class="giftForm-input"
+                                  name="senderEmail"
+                                  placeholder="your@email.com"
+                                  required
+                                />
+                      </div>
+                    </div>
+                  </div>
+        
+                  <!-- Message and Address -->
+                  <div class="giftForm-section">
+                    <h4 class="giftForm-sectionTitle">
+                      <i class="fas fa-envelope"></i>
+                      Additional Details
+                    </h4>
+                    <div class="giftForm-field">
+                      <label class="giftForm-label">Personal Message</label>
+                      <textarea
+                                class="giftForm-textarea"
+                                name="message"
+                                placeholder="Write a heartfelt message..."
+                                rows="3"
+                              ></textarea>
+                    </div>
+                    <div class="giftForm-field">
+                      <label class="giftForm-label">Billing Address</label>
+                      <textarea
+                                class="giftForm-textarea"
+                                name="billingAddress"
+                                placeholder="Your complete billing address"
+                                rows="2"
+                                required
+                              ></textarea>
+                    </div>
+                  </div>
+        
+                  <!-- Submit Button -->
+                  <div class="giftForm-submitSection">
+                    <button type="submit" class="giftForm-submitButton">
+                              <span class="giftSubmit-icon">
+                                <i class="fas fa-gift"></i>
+                              </span>
+                              <span class="giftSubmit-text">Complete Gift Purchase</span>
+                              <div class="giftSubmit-ripple"></div>
+                            </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+    <!--============= Footer Section Starts Here =============-->
+    <footer class="th-footer-section">
+      <!-- Animated background elements -->
+      <div class="th-particles" id="th-particles"></div>
+      <div class="th-glow" style="left: 20%; top: 30%"></div>
+      <div class="th-glow" style="right: 10%; bottom: 20%"></div>
+
+      <div class="th-container">
+        <div class="th-footer-top th-padding-top th-padding-bottom">
+          <div class="th-logo">
+            <a href="#0">
+              <img
+                src="assets/images/tethar-image/tether gif.gif"
+                alt="Tether Heart Logo"
+              />
+            </a>
+          </div>
+          <ul class="th-social-icons">
+            <li>
+              <a href="#0"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#0" class="th-active"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-pinterest-p"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+          </ul>
+
+          <div class="th-app-download">
+            <a href="#0" class="th-app-btn">
+              <i class="fab fa-apple"></i>
+              <div class="th-app-btn-text">
+                <span>Download on the</span>
+                <span>App Store</span>
+              </div>
+            </a>
+            <a href="#0" class="th-app-btn">
+              <i class="fab fa-google-play"></i>
+              <div class="th-app-btn-text">
+                <span>Get it on</span>
+                <span>Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="th-footer-bottom">
+          <ul class="th-footer-link">
+            <li>
+              <a href="#0">About</a>
+            </li>
+            <li>
+              <a href="#0">FAQs</a>
+            </li>
+            <li>
+              <a href="#0">Contact</a>
+            </li>
+            <li>
+              <a href="#0">Terms of Service</a>
+            </li>
+            <li>
+              <a href="#0">Privacy</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="th-copyright">
+          <p>
+            © 2025 Tether Heart All Rights Reserved | Designed By
+            <a href="https://thevisionbrands.com/">The Vision Brands</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+<nav class="th-mobile-nav">
+      <ul class="th-mobile-nav-menu">
+        <li>
+          <a href="#0">
+            <i class="fas fa-question-circle"></i>
+            <span>Ask Us</span>
+          </a>
+        </li>
+        <li>
+          <a href="#0">
+            <i class="fas fa-address-book"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+        <li class="li-whatsapp" >
+          <a href="#0" class="th-active" id="show-whatssapp-mob-nav">
+            <!-- <i class="fa-brands fa-whatsapp"></i> -->
+            <img src="./assets/images/tethar-image/whats-app-logo.svg" alt="" />
+            <span>whatsapp</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a href="#0">
+            <i class="fas fa-info-circle"></i>
+            <span>FAQs</span>
+          </a>
+        </li> -->
+        <li>
+          <a href="#0" class="th-active">
+            <i class="fas fa-comment-dots"></i>
+            <span>Live Chat</span>
+          </a>
+        </li>
+        <li>
+          <a href="#0">
+            <i class="fas fa-hands-helping"></i>
+            <span>Need Help</span>
+          </a>
+        </li>
+      </ul>
+    </nav>    <!--============= Footer Section Ends Here =============-->
+
+    <!--=================== RTL Feature Section Starts Here ===================-->
+    <div class="swap-area active">
+        <div class="chorka">
+            <img src="assets/images/gear.png" alt="img">
+        </div>
+        <div class="swap-item">
+            <a href="#">Dark</a>
+        </div>
+        <div class="swap-item">
+            <a href="#">RTL</a>
+        </div>
+    </div>
+    <!--=================== RTL Feature Section Ends Here ===================-->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/waypoints.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/owl.min.js"></script>
+    <script src="assets/js/counterup.min.js"></script>
+    <script src="assets/js/paroller.js"></script>
+    <script src="assets/js/main.js"></script>
+
+            <script>
+          // Gift Experience JavaScript
+              class GiftExperience {
+                constructor() {
+                  this.modal = document.getElementById('giftModalOverlay');
+                  this.packageSection = document.getElementById('giftPackageSection');
+                  this.formSection = document.getElementById('giftFormSection');
+                  this.selectedPackage = null;
+        
+                  this.init();
+                }
+        
+                init() {
+                  this.bindEvents();
+                  this.createFloatingElements();
+                }
+        
+                bindEvents() {
+                  // Send Gift Button
+                  
+        
+                    document.querySelectorAll('#giftSendButton').forEach((button) => {
+                    button.addEventListener('click', () => {
+                    this.openModal();
+                    });
+                    });
+        
+                  // Close Modal
+                  document
+                    .getElementById('giftModalClose')
+                    .addEventListener('click', () => {
+                      this.closeModal();
+                    });
+        
+                  // Close modal when clicking overlay
+                  this.modal.addEventListener('click', (e) => {
+                    if (e.target === this.modal) {
+                      this.closeModal();
+                    }
+                  });
+        
+                  // Package Selection
+                  document.querySelectorAll('.giftPackage-card').forEach((card) => {
+                    card.addEventListener('click', () => {
+                      this.selectPackage(card.dataset.package);
+                    });
+                  });
+        
+                  // Back Button
+                  document
+                    .getElementById('giftFormBack')
+                    .addEventListener('click', () => {
+                      this.showPackageSelection();
+                    });
+        
+                  // Form Submission
+                  document
+                    .getElementById('giftForm')
+                    .addEventListener('submit', (e) => {
+                      this.handleFormSubmit(e);
+                    });
+        
+                  // Escape key to close modal
+                  document.addEventListener('keydown', (e) => {
+                    if (
+                      e.key === 'Escape' &&
+                      this.modal.classList.contains('giftModal-active')
+                    ) {
+                      this.closeModal();
+                    }
+                  });
+        
+                  // Add ripple effect to buttons
+                  this.addRippleEffect();
+                }
+        
+                openModal() {
+                  this.modal.classList.add('giftModal-active');
+                  document.body.style.overflow = 'hidden';
+                  this.showPackageSelection();
+        
+                  // Add entrance animation
+                  setTimeout(() => {
+                    this.animatePackageCards();
+                  }, 100);
+                }
+        
+                closeModal() {
+                  this.modal.classList.remove('giftModal-active');
+                  document.body.style.overflow = '';
+                  this.selectedPackage = null;
+                  this.resetForm();
+        
+                  // Remove selected state from all cards
+                  document.querySelectorAll('.giftPackage-card').forEach((card) => {
+                    card.classList.remove('giftPackage-selected');
+                  });
+                }
+        
+                selectPackage(packageType) {
+                  this.selectedPackage = packageType;
+        
+                  // Update selected state
+                  document.querySelectorAll('.giftPackage-card').forEach((card) => {
+                    card.classList.remove('giftPackage-selected');
+                  });
+        
+                  document
+                    .querySelector(`[data-package="${packageType}"]`)
+                    .classList.add('giftPackage-selected');
+        
+                  // Show form after a short delay
+                  setTimeout(() => {
+                    this.showForm(packageType);
+                  }, 500);
+                }
+        
+                showPackageSelection() {
+                  this.packageSection.style.display = 'block';
+                  this.formSection.style.display = 'none';
+        
+                  // Animate package cards
+                  this.animatePackageCards();
+                }
+        
+                showForm(packageType) {
+                  this.packageSection.style.display = 'none';
+                  this.formSection.style.display = 'block';
+        
+                  // Update form title
+                  const packageNames = {
+                    quarterly: 'Quarterly Rhythm',
+                    seasonal: 'Seasonal Sync',
+                    annual: 'Annual Harmony',
+                    connected: 'Connected Six',
+                  };
+        
+                  document.getElementById(
+                    'giftFormTitle'
+                  ).textContent = `${packageNames[packageType]} Details`;
+        
+                  // Animate form sections
+                  this.animateFormSections();
+                }
+        
+                animatePackageCards() {
+                  const cards = document.querySelectorAll('.giftPackage-card');
+                  cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+        
+                    setTimeout(() => {
+                      card.style.transition = 'all 0.5s ease';
+                      card.style.opacity = '1';
+                      card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                  });
+                }
+        
+                animateFormSections() {
+                  const sections = document.querySelectorAll('.giftForm-section');
+                  sections.forEach((section, index) => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateX(-30px)';
+        
+                    setTimeout(() => {
+                      section.style.transition = 'all 0.5s ease';
+                      section.style.opacity = '1';
+                      section.style.transform = 'translateX(0)';
+                    }, index * 150);
+                  });
+                }
+        
+                handleFormSubmit(e) {
+                  e.preventDefault();
+        
+                  const formData = new FormData(e.target);
+                  const giftData = {
+                    package: this.selectedPackage,
+                    recipientName: formData.get('recipientName'),
+                    recipientEmail: formData.get('recipientEmail'),
+                    recipientPhone: formData.get('recipientPhone'),
+                    deliveryDate: formData.get('deliveryDate'),
+                    senderName: formData.get('senderName'),
+                    senderEmail: formData.get('senderEmail'),
+                    message: formData.get('message'),
+                    billingAddress: formData.get('billingAddress'),
+                  };
+        
+                  // Simulate form submission
+                  this.showSuccessMessage(giftData);
+                }
+        
+                showSuccessMessage(giftData) {
+                  // Create success overlay
+                  const successOverlay = document.createElement('div');
+                  successOverlay.className = 'giftSuccess-overlay';
+                  successOverlay.innerHTML = `
+                          <div class="giftSuccess-container">
+                              <div class="giftSuccess-icon">
+                                  <i class="fas fa-check-circle"></i>
+                              </div>
+                              <h3 class="giftSuccess-title">Gift Sent Successfully!</h3>
+                              <p class="giftSuccess-message">
+                                  Your ${this.getPackageName(
+                                    giftData.package
+                                  )} gift package has been sent to ${
+                    giftData.recipientName
+                  }.
+                                  They will receive it on ${giftData.deliveryDate}.
+                              </p>
+                              <button class="giftSuccess-button" onclick="this.parentElement.parentElement.remove()">
+                                  <i class="fas fa-heart"></i>
+                                  Continue
+                              </button>
+                          </div>
+                      `;
+        
+                  // Add success styles
+                  const successStyles = `
+                          <style>
+                              .giftSuccess-overlay {
+                                  position: fixed;
+                                  top: 0;
+                                  left: 0;
+                                  width: 100%;
+                                  height: 100%;
+                                  background: rgba(0, 0, 0, 0.9);
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                  z-index: 2000;
+                                  animation: giftSuccess-fadeIn 0.5s ease;
+                              }
+        
+                              .giftSuccess-container {
+                                  background: white;
+                                  border-radius: 25px;
+                                  padding: 3rem;
+                                  text-align: center;
+                                  max-width: 500px;
+                                  margin: 1rem;
+                                  animation: giftSuccess-slideUp 0.5s ease;
+                              }
+        
+                              .giftSuccess-icon {
+                                  width: 100px;
+                                  height: 100px;
+                                  background: linear-gradient(135deg, #4caf50, #45a049);
+                                  border-radius: 50%;
+                                  display: flex;
+                                  align-items: center;
+                                  justify-content: center;
+                                  margin: 0 auto 2rem;
+                                  animation: giftSuccess-bounce 1s ease;
+                              }
+        
+                              .giftSuccess-icon i {
+                                  font-size: 3rem;
+                                  color: white;
+                              }
+        
+                              .giftSuccess-title {
+                                  font-size: 2rem;
+                                  font-weight: 700;
+                                  color: #333;
+                                  margin-bottom: 1rem;
+                              }
+        
+                              .giftSuccess-message {
+                                  font-size: 1.1rem;
+                                  color: #666;
+                                  line-height: 1.6;
+                                  margin-bottom: 2rem;
+                              }
+        
+                              .giftSuccess-button {
+                                  padding: 1rem 2rem;
+                                  font-size: 1.1rem;
+                                  font-weight: 600;
+                                  color: white;
+                                  background: linear-gradient(135deg, #2d077e, #851e8b);
+                                  border: none;
+                                  border-radius: 50px;
+                                  cursor: pointer;
+                                  transition: all 0.3s ease;
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 0.5rem;
+                                  margin: 0 auto;
+                              }
+        
+                              .giftSuccess-button:hover {
+                                  transform: translateY(-2px);
+                                  box-shadow: 0 10px 25px rgba(45, 7, 126, 0.4);
+                              }
+        
+                              @keyframes giftSuccess-fadeIn {
+                                  from { opacity: 0; }
+                                  to { opacity: 1; }
+                              }
+        
+                              @keyframes giftSuccess-slideUp {
+                                  from { transform: translateY(50px); opacity: 0; }
+                                  to { transform: translateY(0); opacity: 1; }
+                              }
+        
+                              @keyframes giftSuccess-bounce {
+                                  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+                                  40% { transform: translateY(-10px); }
+                                  60% { transform: translateY(-5px); }
+                              }
+                          </style>
+                      `;
+        
+                  document.head.insertAdjacentHTML('beforeend', successStyles);
+                  document.body.appendChild(successOverlay);
+        
+                  // Close modal after showing success
+                  setTimeout(() => {
+                    this.closeModal();
+                  }, 100);
+        
+                  console.log('Gift Data:', giftData);
+                }
+        
+                getPackageName(packageType) {
+                  const names = {
+                    quarterly: 'Quarterly Rhythm',
+                    seasonal: 'Seasonal Sync',
+                    annual: 'Annual Harmony',
+                    connected: 'Connected Six',
+                  };
+                  return names[packageType] || packageType;
+                }
+        
+                resetForm() {
+                  document.getElementById('giftForm').reset();
+                }
+        
+                addRippleEffect() {
+                  const buttons = document.querySelectorAll(
+                    '.giftBanner-sendButton, .giftForm-submitButton'
+                  );
+        
+                  buttons.forEach((button) => {
+                    button.addEventListener('click', function (e) {
+                      const ripple = this.querySelector(
+                        '.giftButton-ripple, .giftSubmit-ripple'
+                      );
+                      if (ripple) {
+                        ripple.style.width = '0';
+                        ripple.style.height = '0';
+        
+                        setTimeout(() => {
+                          ripple.style.width = '300px';
+                          ripple.style.height = '300px';
+                        }, 10);
+        
+                        setTimeout(() => {
+                          ripple.style.width = '0';
+                          ripple.style.height = '0';
+                        }, 600);
+                      }
+                    });
+                  });
+                }
+        
+                createFloatingElements() {
+                  // Create additional floating elements for enhanced visual appeal
+                  const banner = document.querySelector('.giftBanner-masterSection');
+        
+                  for (let i = 0; i < 10; i++) {
+                    const element = document.createElement('div');
+                    element.className = `giftFloat-extra giftFloat-extra-${i}`;
+                    element.style.cssText = `
+                              position: absolute;
+                              width: ${Math.random() * 6 + 2}px;
+                              height: ${Math.random() * 6 + 2}px;
+                              background: rgba(255, 255, 255, ${
+                                Math.random() * 0.3 + 0.1
+                              });
+                              border-radius: 50%;
+                              top: ${Math.random() * 100}%;
+                              left: ${Math.random() * 100}%;
+                              animation: giftFloat-drift ${
+                                Math.random() * 10 + 10
+                              }s infinite linear;
+                              pointer-events: none;
+                              z-index: 3;
+                          `;
+        
+                    banner.appendChild(element);
+                  }
+        
+                  // Add drift animation
+                  const driftStyle = document.createElement('style');
+                  driftStyle.textContent = `
+                          @keyframes giftFloat-drift {
+                              0% {
+                                  transform: translateY(0px) translateX(0px) rotate(0deg);
+                                  opacity: 0;
+                              }
+                              10% {
+                                  opacity: 1;
+                              }
+                              90% {
+                                  opacity: 1;
+                              }
+                              100% {
+                                  transform: translateY(-100vh) translateX(50px) rotate(360deg);
+                                  opacity: 0;
+                              }
+                          }
+                      `;
+                  document.head.appendChild(driftStyle);
+                }
+              }
+        
+              // Initialize the gift experience when DOM is loaded
+              document.addEventListener('DOMContentLoaded', () => {
+                new GiftExperience();
+        
+                // Add smooth scrolling for better UX
+                document.documentElement.style.scrollBehavior = 'smooth';
+        
+                // Add loading animation
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                  document.body.style.transition = 'opacity 1s ease';
+                  document.body.style.opacity = '1';
+                }, 100);
+              });
+        
+              // Add intersection observer for scroll animations
+              const observerOptionsallnewest = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px',
+              };
+        
+              const observerallnewest = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.style.animation =
+                      'giftElement-slideInUp 0.8s ease forwards';
+                  }
+                });
+              }, observerOptionsallnewest);
+        
+              // Observe elements for scroll animations
+              document.addEventListener('DOMContentLoaded', () => {
+                const animatedElements = document.querySelectorAll(
+                  '.giftBanner-titleSection, .giftBanner-ctaSection'
+                );
+                animatedElements.forEach((el) => observerallnewest.observe(el));
+              });
+        
+              // Add slide in animation
+              const slideInStyle = document.createElement('style');
+              slideInStyle.textContent = `
+                  @keyframes giftElement-slideInUp {
+                      from {
+                          opacity: 0;
+                          transform: translateY(30px);
+                      }
+                      to {
+                          opacity: 1;
+                          transform: translateY(0);
+                      }
+                  }
+              `;
+              document.head.appendChild(slideInStyle);
+        </script>
+        
+        <script>
+          // Initialize variables
+                        const xchatFixedContainer = document.getElementById('xchatFixedContainer');
+                        const xchatMainBtn = document.getElementById('xchatMainBtn');
+                        const xchatWindow = document.getElementById('xchatWindow');
+                        const xchatMessages = document.getElementById('xchatMessages');
+                        const xchatInput = document.getElementById('xchatInput');
+                        const xchatSendBtn = document.getElementById('xchatSendBtn');
+                        const xchatNotification = document.getElementById('xchatNotification');
+                        const xchatClose = document.getElementById('xchatClose');
+                
+                        let xchatIsOpen = false;
+                        let xchatMessageCount = 0;
+                
+                        // Predefined bot responses
+                        const xchatBotResponses = [
+                            "That's a great question! Let me help you with that. 🤔",
+                            "I understand what you're looking for. Here's what I can tell you... 💡",
+                            "Thanks for reaching out! I'm here to assist you. 😊",
+                            "Let me provide you with the information you need. 📋",
+                            "I'd be happy to help you with that! Here's my suggestion... ✨",
+                            "That's an interesting point. Let me explain... 🎯",
+                            "I see what you mean. Here's how we can solve this... 🔧",
+                            "Great choice! This is definitely something I can help with. 🌟",
+                            "I'm glad you asked! This is one of my favorite topics. 💬",
+                            "Perfect timing! I have just the right information for you. ⏰"
+                        ];
+                
+                        // Show/hide chatbot on scroll
+                        let xchatScrollTimeout;
+                        window.addEventListener('scroll', () => {
+                            clearTimeout(xchatScrollTimeout);
+                            
+                            if (window.scrollY > 200) {
+                                xchatFixedContainer.classList.add('xchat-visible');
+                            }
+                            
+                            xchatScrollTimeout = setTimeout(() => {
+                                if (window.scrollY <= 200 && !xchatIsOpen) {
+                                    xchatFixedContainer.classList.remove('xchat-visible');
+                                }
+                            }, 100);
+                        });
+                
+                        // Toggle chat window
+                        xchatMainBtn.addEventListener('click', () => {
+                            xchatToggleChat();
+                        });
+                
+                        xchatClose.addEventListener('click', () => {
+                            xchatToggleChat();
+                        });
+                
+                        function xchatToggleChat() {
+                            xchatIsOpen = !xchatIsOpen;
+                            
+                            if (xchatIsOpen) {
+                                xchatWindow.classList.add('xchat-open');
+                                xchatNotification.style.display = 'none';
+                                xchatInput.focus();
+                                xchatScrollToBottom();
+                            } else {
+                                xchatWindow.classList.remove('xchat-open');
+                            }
+                        }
+                
+                        // Send message functionality
+                        function xchatSendMessage() {
+                            const message = xchatInput.value.trim();
+                            if (!message) return;
+                
+                            // Add user message
+                            xchatAddMessage(message, 'user');
+                            xchatInput.value = '';
+                            xchatResizeInput();
+                
+                            // Show typing indicator
+                            xchatShowTyping();
+                
+                            // Simulate bot response
+                            setTimeout(() => {
+                                xchatHideTyping();
+                                const response = xchatBotResponses[Math.floor(Math.random() * xchatBotResponses.length)];
+                                xchatAddMessage(response, 'bot');
+                            }, 1500 + Math.random() * 2000);
+                        }
+                
+                        // Add message to chat
+                        function xchatAddMessage(text, sender) {
+                            const messageDiv = document.createElement('div');
+                            messageDiv.className = `xchat-message xchat-${sender}`;
+                            
+                            const currentTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                            
+                            messageDiv.innerHTML = `
+                                <div class="xchat-message-bubble">
+                                    ${text}
+                                    <div class="xchat-message-time">${currentTime}</div>
+                                </div>
+                            `;
+                
+                            xchatMessages.appendChild(messageDiv);
+                            xchatScrollToBottom();
+                            xchatMessageCount++;
+                
+                            // Update notification if chat is closed
+                            if (!xchatIsOpen && sender === 'bot') {
+                                xchatNotification.textContent = xchatMessageCount;
+                                xchatNotification.style.display = 'flex';
+                            }
+                        }
+                
+                        // Show typing indicator
+                        function xchatShowTyping() {
+                            const typingDiv = document.createElement('div');
+                            typingDiv.className = 'xchat-message xchat-bot';
+                            typingDiv.id = 'xchatTypingIndicator';
+                            typingDiv.innerHTML = `
+                                <div class="xchat-typing">
+                                    <div class="xchat-typing-dots">
+                                        <div class="xchat-typing-dot"></div>
+                                        <div class="xchat-typing-dot"></div>
+                                        <div class="xchat-typing-dot"></div>
+                                    </div>
+                                    <span style="font-size: 12px; color: #666;">AI is typing...</span>
+                                </div>
+                            `;
+                            xchatMessages.appendChild(typingDiv);
+                            xchatScrollToBottom();
+                        }
+                
+                        // Hide typing indicator
+                        function xchatHideTyping() {
+                            const typingIndicator = document.getElementById('xchatTypingIndicator');
+                            if (typingIndicator) {
+                                typingIndicator.remove();
+                            }
+                        }
+                
+                        // Scroll to bottom
+                        function xchatScrollToBottom() {
+                            setTimeout(() => {
+                                xchatMessages.scrollTop = xchatMessages.scrollHeight;
+                            }, 100);
+                        }
+                
+                        // Auto-resize input
+                        function xchatResizeInput() {
+                            xchatInput.style.height = 'auto';
+                            xchatInput.style.height = Math.min(xchatInput.scrollHeight, 120) + 'px';
+                        }
+                
+                        // Event listeners
+                        xchatSendBtn.addEventListener('click', xchatSendMessage);
+                
+                        xchatInput.addEventListener('keypress', (e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                                e.preventDefault();
+                                xchatSendMessage();
+                            }
+                        });
+                
+                        xchatInput.addEventListener('input', xchatResizeInput);
+                
+                        // Quick reply function
+                        function xchatSendQuickReply(message) {
+                            xchatAddMessage(message, 'user');
+                            
+                            // Remove quick replies after use
+                            const quickReplies = document.querySelector('.xchat-quick-replies');
+                            if (quickReplies) {
+                                quickReplies.style.opacity = '0';
+                                quickReplies.style.transform = 'translateY(-10px)';
+                                setTimeout(() => quickReplies.remove(), 300);
+                            }
+                
+                            // Show typing and respond
+                            setTimeout(() => {
+                                xchatShowTyping();
+                                setTimeout(() => {
+                                    xchatHideTyping();
+                                    let response;
+                                    if (message.includes('services')) {
+                                        response = "We offer a wide range of services including web development, mobile apps, AI solutions, and digital marketing. Would you like to know more about any specific service? 🚀";
+                                    } else if (message.includes('help')) {
+                                        response = "I'm here to help! You can ask me about our services, pricing, support, or anything else. What specific information are you looking for? 🤝";
+                                    } else if (message.includes('support')) {
+                                        response = "Our support team is available 24/7! You can reach us via email at support@company.com or call us at +1-234-567-8900. How can we assist you today? 📞";
+                                    } else {
+                                        response = xchatBotResponses[Math.floor(Math.random() * xchatBotResponses.length)];
+                                    }
+                                    xchatAddMessage(response, 'bot');
+                                }, 1500);
+                            }, 500);
+                        }
+                
+                        // Simulate new messages when chat is closed
+                        setInterval(() => {
+                            if (!xchatIsOpen && Math.random() < 0.3) {
+                                const proactiveMessages = [
+                                    "Hi! I noticed you're browsing our site. Need any help? 😊",
+                                    "Got questions? I'm here to help! 💬",
+                                    "Looking for something specific? Let me know! 🔍",
+                                    "New features available! Want to learn more? ✨"
+                                ];
+                                const message = proactiveMessages[Math.floor(Math.random() * proactiveMessages.length)];
+                                xchatAddMessage(message, 'bot');
+                            }
+                        }, 30000); // Every 30 seconds
+                
+                        // Close chat when clicking outside
+                        document.addEventListener('click', (e) => {
+                            if (xchatIsOpen && !xchatWindow.contains(e.target) && !xchatMainBtn.contains(e.target)) {
+                                xchatToggleChat();
+                            }
+                        });
+                
+                        // Initial bot messages
+                        setTimeout(() => {
+                            xchatAddMessage("I see you're exploring our platform! Feel free to ask me anything. 🌟", 'bot');
+                        }, 3000);
+                
+                        setTimeout(() => {
+                            xchatAddMessage("Pro tip: I can help you with product info, pricing, support, and more! 💡", 'bot');
+                        }, 8000);
+        </script>
+        <script>
+          // Initialize variables
+                            const xpurpleFixedBtn = document.getElementById('xpurpleFixedBtn');
+                            const xpurpleMainBtn = document.getElementById('xpurpleMainBtn');
+                            const xpurpleDropdown = document.getElementById('xpurpleDropdown');
+                            const xpurpleSignupBtn = document.getElementById('xpurpleSignupBtn');
+                            const xpurpleLoginBtn = document.getElementById('xpurpleLoginBtn');
+                            const xpurpleSignupModal = document.getElementById('xpurpleSignupModal');
+                            const xpurpleLoginModal = document.getElementById('xpurpleLoginModal');
+                    
+                            // Show/hide fixed button on scroll
+                            let xpurpleScrollTimeout;
+                            window.addEventListener('scroll', () => {
+                                clearTimeout(xpurpleScrollTimeout);
+                                
+                                if (window.scrollY > 200) {
+                                    xpurpleFixedBtn.classList.add('xpurple-visible');
+                                }
+                                
+                                xpurpleScrollTimeout = setTimeout(() => {
+                                    if (window.scrollY <= 200) {
+                                        xpurpleFixedBtn.classList.remove('xpurple-visible');
+                                        xpurpleDropdown.classList.remove('xpurple-show');
+                                    }
+                                }, 100);
+                            });
+                    
+                            // Toggle dropdown on hover
+                            xpurpleFixedBtn.addEventListener('mouseenter', () => {
+                                xpurpleDropdown.classList.add('xpurple-show');
+                            });
+                    
+                            xpurpleFixedBtn.addEventListener('mouseleave', () => {
+                                setTimeout(() => {
+                                    if (!xpurpleDropdown.matches(':hover')) {
+                                        xpurpleDropdown.classList.remove('xpurple-show');
+                                    }
+                                }, 100);
+                            });
+                    
+                            // Modal functions
+                            function xpurpleOpenModal(modal) {
+                                modal.classList.add('xpurple-active');
+                                document.body.style.overflow = 'hidden';
+                                xpurpleDropdown.classList.remove('xpurple-show');
+                            }
+                    
+                            function xpurpleCloseModal(modal) {
+                                modal.classList.remove('xpurple-active');
+                                document.body.style.overflow = '';
+                            }
+                    
+                            function xpurpleSwitchModal(from, to) {
+                                xpurpleCloseModal(from);
+                                setTimeout(() => xpurpleOpenModal(to), 200);
+                            }
+                    
+                            // Event listeners for modal controls
+                            xpurpleSignupBtn.addEventListener('click', () => xpurpleOpenModal(xpurpleSignupModal));
+                            xpurpleLoginBtn.addEventListener('click', () => xpurpleOpenModal(xpurpleLoginModal));
+                    
+                            // Close buttons
+                            document.getElementById('xpurpleSignupClose').addEventListener('click', () => xpurpleCloseModal(xpurpleSignupModal));
+                            document.getElementById('xpurpleLoginClose').addEventListener('click', () => xpurpleCloseModal(xpurpleLoginModal));
+                    
+                            // Switch between modals
+                            document.getElementById('xpurpleToLogin').addEventListener('click', (e) => {
+                                e.preventDefault();
+                                xpurpleSwitchModal(xpurpleSignupModal, xpurpleLoginModal);
+                            });
+                    
+                            document.getElementById('xpurpleToSignup').addEventListener('click', (e) => {
+                                e.preventDefault();
+                                xpurpleSwitchModal(xpurpleLoginModal, xpurpleSignupModal);
+                            });
+                    
+                            // Close modals on overlay click
+                            [xpurpleSignupModal, xpurpleLoginModal].forEach(modal => {
+                                modal.addEventListener('click', (e) => {
+                                    if (e.target === modal) {
+                                        xpurpleCloseModal(modal);
+                                    }
+                                });
+                            });
+                    
+                            // Close modals on Escape key
+                            document.addEventListener('keydown', (e) => {
+                                if (e.key === 'Escape') {
+                                    xpurpleCloseModal(xpurpleSignupModal);
+                                    xpurpleCloseModal(xpurpleLoginModal);
+                                }
+                            });
+                    
+                            // Form submissions (demo)
+                            document.getElementById('xpurpleSignupForm').addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                alert('Sign up form submitted! (Demo)');
+                                xpurpleCloseModal(xpurpleSignupModal);
+                            });
+                    
+                            document.getElementById('xpurpleLoginForm').addEventListener('submit', (e) => {
+                                e.preventDefault();
+                                alert('Login form submitted! (Demo)');
+                                xpurpleCloseModal(xpurpleLoginModal);
+                            });
+                    
+                            // Enhanced touch support for mobile
+                            let xpurpleTouchTimeout;
+                            xpurpleMainBtn.addEventListener('touchstart', () => {
+                                xpurpleTouchTimeout = setTimeout(() => {
+                                    xpurpleDropdown.classList.add('xpurple-show');
+                                }, 200);
+                            });
+                    
+                            xpurpleMainBtn.addEventListener('touchend', () => {
+                                clearTimeout(xpurpleTouchTimeout);
+                            });
+                    
+                            // Auto-hide dropdown on mobile after selection
+                            [xpurpleSignupBtn, xpurpleLoginBtn].forEach(btn => {
+                                btn.addEventListener('click', () => {
+                                    xpurpleDropdown.classList.remove('xpurple-show');
+                                });
+                            });
+        </script>
+
+</body>
+
+
+<!-- Mirrored from softivuspro.com/mosto/demo/ltr/light/blog-single-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Mar 2025 10:07:41 GMT -->
+</html>

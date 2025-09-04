@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Attractive Animated UI - Purple Theme</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    /* Custom Color Theme */
+    :root {
+      --primary-color: #2b0b90;
+      --secondary-color: #7166ee;
+      --accent-color: #f49cc8;
+      --light-purple: #eee8fc;
+      --medium-purple: #ba94fd;
+      --dark-text: #333;
+      --light-text: #666;
+      --gradient-1: linear-gradient(135deg, #7166ee, #2b0b90);
+      --gradient-2: linear-gradient(135deg, #f49cc8, #f28ba8);
+      --glow-shadow: 0 5px 20px rgba(113, 102, 238, 0.3);
+    }
+    
+    /* Overall Page Styling */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Banner Section */
+    .banner-7 {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      color: #fff;
+    }
+    
+    /* Video Background Styles */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    
+    .video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    
+    .video-overlay {
+      position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(177deg, rgb(34 14 97 / 40%) 0%, rgb(19 15 28 / 60%) 100%);
+    }
+    
+    /* particlevideoheaders Effects */
+    .particlevideoheaderss {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    
+    .particlevideoheaders {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: floatvideoheaders-particlevideoheaderss 15s infinite;
+    }
+
+    .row {
+      height: 100%;
+    }
+    
+    .banner-content-7 {
+      padding: 30px 0;
+    }
+    
+    .banner-content-7 .title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    
+    .banner-content-7 p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+      max-width: 90%;
+    }
+    
+    /* Gradient Text Effect */
+    .text-gradient {
+      background: linear-gradient(135deg, #7166ee, #2b0b90);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(113, 102, 238, 0.4);
+    }
+    
+    /* Button Styling */
+    .banner-button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .button-4 {
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: all 0.4s ease;
+      display: inline-block;
+      box-shadow: 0 5px 20px rgba(113, 102, 238, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      background: rgba(113, 102, 238, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .button-4.active {
+      background: linear-gradient(135deg, #7166ee, #2b0b90);
+      border: none;
+    }
+    
+    .button-4:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(113, 102, 238, 0.4);
+      color: #fff;
+    }
+    
+    .button-4:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #7166ee, #2b0b90);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease;
+    }
+    
+    .button-4:hover:before {
+      opacity: 1;
+    }
+    
+    .button-4.active {
+      position: relative;
+    }
+    
+    .button-4.active:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: inherit;
+      filter: blur(15px);
+      z-index: -2;
+      opacity: 0.7;
+      transform: scale(0.9);
+    }
+    
+    /* Image Styling */
+    .image-wrapper {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .image-wrapper img {
+      max-width: 100%;
+      z-index: 2;
+      filter: drop-shadow(0 10px 20px rgba(43, 11, 144, 0.3));
+    }
+    
+    /* Decorative Elements */
+    .image-wrapper:before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(113, 102, 238, 0.4), rgba(43, 11, 144, 0.4));
+      filter: blur(40px);
+      z-index: 1;
+    }
+    
+    .image-wrapper:after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 25%;
+      right: 0;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(244, 156, 200, 0.4), rgba(242, 139, 168, 0.4));
+      filter: blur(40px);
+      z-index: 1;
+    }
+    
+    /* Counter Section */
+    .counter-wrapper-3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: -50px;
+      padding: 30px;
+      background: rgba(113, 102, 238, 0.07);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(43, 11, 144, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      z-index: 10;
+    }
+    
+    .counter-item {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      border-radius: 15px;
+      background: rgba(113, 102, 238, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .counter-item:hover {
+      transform: translateY(-10px);
+      background: rgba(113, 102, 238, 0.1);
+      box-shadow: 0 10px 30px rgba(43, 11, 144, 0.2);
+    }
+    
+    .counter-thumb {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      padding: 10px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, rgba(113, 102, 238, 0.2), rgba(43, 11, 144, 0.2));
+    }
+    
+    .counter-thumb img {
+      max-width: 100%;
+      filter: brightness(0) invert(1);
+    }
+    
+    .counter-content .title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    
+    .counter-content .name {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Animation Styles */
+    .floatvideoheadersing-animation {
+      animation: floatvideoheaders 6s ease-in-out infinite;
+    }
+    
+    .pulsevideoheaders-animation {
+      animation: pulsevideoheaders 2s infinite;
+    }
+    
+    .shimmervideoheaders {
+      background: linear-gradient(90deg, transparent, rgba(186, 148, 253, 0.3), transparent);
+      background-size: 200% 100%;
+      animation: shimmervideoheaders 3s infinite linear;
+    }
+    
+    /* Animation Keyframes */
+    @keyframes floatvideoheaders {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    
+    @keyframes pulsevideoheaders {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes shimmervideoheaders {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    
+    @keyframes floatvideoheaders-particlevideoheaderss {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      25% {
+        transform: translateY(-30px) translateX(30px);
+      }
+      50% {
+        transform: translateY(-60px) translateX(0);
+      }
+      75% {
+        transform: translateY(-30px) translateX(-30px);
+      }
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .banner-content-7 .title {
+        font-size: 2.5rem;
+      }
+      
+      .counter-wrapper-3 {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .banner-content-7 {
+        text-align: center;
+        padding: 0;
+      }
+      
+      .banner-content-7 p {
+        margin: 0 auto 30px;
+      }
+      
+      .banner-button-group {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="banner-7">
+    <!-- Video Background -->
+    <div class="video-background">
+      <video autoplay muted loop class="video-bg">
+        <source src="assets/images/tethar-image/ring-video.mp4" type="video/mp4">
+        <!-- Fallback background image if video doesn't load -->
+        <div style="background-image: url('assets/images/tethar-image/ring-video.mp4')"></div>
+      </video>
+      <!-- Overlay to improve text visibility -->
+      <div class="video-overlay"></div>
+    </div>
+    
+    <!-- particlevideoheaderss Effect -->
+    <div class="particlevideoheaderss" id="particlevideoheaderss"></div>
+    
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="banner-content-7 animate__animated animate__fadeInLeft">
+            <h1 class="title text-gradient animate__animated animate__fadeIn">Enlarge Your Business With Web App</h1>
+            <p class="animate__animated animate__fadeIn animate__delay-1s">The simple, intuitive and powerful app to manage your work.</p>
+            <div class="banner-button-group animate__animated animate__fadeInUp animate__delay-2s">
+              <a href="#0" class="button-4 hover-effect">Start Using for Free</a>
+              <a href="#0" class="button-4 active pulsevideoheaders-animation">Explore Features</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-lg-block d-none">
+          <div class="image-wrapper animate__animated animate__fadeInRight">
+            <img src="assets/images/banner/banner-7.png" alt="banner" class="floatvideoheadersing-animation" />
+          </div>
+        </div>
+        
+        <div class="col-12">
+          <div class="counter-wrapper-3 animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="counter-item shimmervideoheaders">
+              <div class="counter-thumb">
+                <img src="assets/images/icon/counter1.png" alt="icon" class="pulsevideoheaders-animation" />
+              </div>
+              <div class="counter-content">
+                <h2 class="title"><span class="counter" data-count="17501">0</span></h2>
+                <span class="name">Premium Users</span>
+              </div>
+            </div>
+            <div class="counter-item shimmervideoheaders">
+              <div class="counter-thumb">
+                <img src="assets/images/icon/counter2.png" alt="icon" class="pulsevideoheaders-animation" />
+              </div>
+              <div class="counter-content">
+                <h2 class="title"><span class="counter" data-count="1987">0</span></h2>
+                <span class="name">Daily Visitors</span>
+              </div>
+            </div>
+            <div class="counter-item shimmervideoheaders">
+              <div class="counter-thumb">
+                <img src="assets/images/icon/counter5.png" alt="icon" class="pulsevideoheaders-animation" />
+              </div>
+              <div class="counter-content">
+                <h2 class="title">
+                  <span class="counter" data-count="95">0</span><span>%</span>
+                </h2>
+                <span class="name">Satisfaction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Counter Animation Script
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+      
+      // Create floatvideoheadersing particlevideoheaderss
+      createparticlevideoheaderss();
+      
+      // Counter animation
+      function startCounters() {
+        counters.forEach(counter => {
+          const updateCount = () => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if(count < target) {
+              counter.innerText = Math.ceil(count + increment);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          
+          updateCount();
+        });
+      }
+      
+      // Create particlevideoheaderss
+      function createparticlevideoheaderss() {
+        const particlevideoheaderssContainer = document.getElementById('particlevideoheaderss');
+        const particlevideoheadersCount = 30;
+        
+        for (let i = 0; i < particlevideoheadersCount; i++) {
+          const particlevideoheaders = document.createElement('div');
+          particlevideoheaders.classList.add('particlevideoheaders');
+          
+          // Random properties
+          const size = Math.random() * 5 + 2;
+          const posX = Math.random() * 100;
+          const posY = Math.random() * 100;
+          const delay = Math.random() * 5;
+          const duration = Math.random() * 10 + 10;
+          
+          // Use theme colors for particlevideoheaderss
+          const colorChoices = [
+            'rgba(113, 102, 238, 0.2)',
+            'rgba(43, 11, 144, 0.15)',
+            'rgba(244, 156, 200, 0.15)',
+            'rgba(186, 148, 253, 0.2)'
+          ];
+          const color = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+          
+          // Apply styles
+          particlevideoheaders.style.width = `${size}px`;
+          particlevideoheaders.style.height = `${size}px`;
+          particlevideoheaders.style.left = `${posX}%`;
+          particlevideoheaders.style.top = `${posY}%`;
+          particlevideoheaders.style.backgroundColor = color;
+          particlevideoheaders.style.animationDelay = `${delay}s`;
+          particlevideoheaders.style.animationDuration = `${duration}s`;
+          
+          particlevideoheaderssContainer.appendChild(particlevideoheaders);
+        }
+      }
+      
+      // Observer for animation triggers
+      const observerOptions = {
+        threshold: 0.1
+      };
+      
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('counter-wrapper-3')) {
+              startCounters();
+            }
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.animate__animated, .counter-wrapper-3').forEach(elem => {
+        observer.observe(elem);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Moyen App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .moyen-app-section {
+        background: linear-gradient(135deg, #2b0b90, #4037b0, #2b0b90);
+        padding: 80px 0;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .moyen-app-section.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .moyen-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .moyen-download-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+      }
+
+      .moyen-download-content.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .moyen-heading-wrapper {
+        margin-bottom: 30px;
+      }
+
+      .moyen-title {
+        font-size: 52px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .moyen-title::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: #f49cc8;
+        bottom: -10px;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.8s ease 0.4s;
+      }
+
+      .moyen-title.animate::after {
+        transform: scaleX(1);
+      }
+
+      .moyen-subtitle {
+        font-size: 24px;
+        font-weight: 400;
+        margin-top: 20px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .moyen-download-options {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 30px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+      }
+
+      .moyen-download-options.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .moyen-qr-code {
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        animation: moyen-float 6s ease-in-out infinite;
+      }
+
+      .moyen-store-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .moyen-store-btn {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .moyen-store-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .moyen-store-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      .moyen-store-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .moyen-store-small {
+        font-size: 12px;
+        color: #333;
+      }
+
+      .moyen-store-large {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .moyen-mockups-wrapper {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: flex-end;
+        transform: translateY(-80px);
+      }
+
+      .moyen-mockup {
+        position: absolute;
+        border-radius: 25px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        transition: all 0.5s ease;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .moyen-mockup.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .moyen-mockup-1 {
+        width: 260px;
+        height: 540px;
+        right: 200px;
+        top: 0;
+        z-index: 3;
+        object-fit: cover;
+        transition-delay: 0.2s;
+      }
+
+      .moyen-mockup-2 {
+        width: 240px;
+        height: 500px;
+        right: 40px;
+        top: 30px;
+        z-index: 2;
+        object-fit: cover;
+        transition-delay: 0.4s;
+      }
+
+      .moyen-mockup-3 {
+        width: 220px;
+        height: 460px;
+        right: 380px;
+        top: 50px;
+        z-index: 1;
+        object-fit: cover;
+        transition-delay: 0.6s;
+      }
+
+      .moyen-mockup.animate-float {
+        animation: moyen-float 6s ease-in-out infinite;
+      }
+
+      .moyen-ring {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.7;
+        z-index: 1;
+        transform: scale(0);
+        transition: transform 1s ease;
+      }
+
+      .moyen-ring.animate {
+        transform: scale(1);
+      }
+
+      .moyen-ring-1 {
+        width: 300px;
+        height: 300px;
+        border: 15px solid #f49cc8;
+        bottom: -150px;
+        left: -100px;
+        transition-delay: 0.3s;
+      }
+
+      .moyen-ring-2 {
+        width: 200px;
+        height: 200px;
+        border: 10px solid #ba94fd;
+        top: -50px;
+        right: 30%;
+        transition-delay: 0.5s;
+      }
+
+      .moyen-ring.animate-pulse {
+        animation: moyen-pulse 5s ease-in-out infinite;
+      }
+
+      .moyen-logo {
+        width: 70px;
+        height: auto;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .moyen-logo.animate {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .moyen-digital-ring {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        transform: scale(0.6);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .moyen-digital-ring.animate {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .moyen-digital-ring-1 {
+        top: 15%;
+        left: 5%;
+        width: 180px;
+        height: 180px;
+        transition-delay: 0.4s;
+      }
+
+      .moyen-digital-ring-2 {
+        bottom: 10%;
+        right: 5%;
+        width: 140px;
+        height: 140px;
+        transition-delay: 0.6s;
+      }
+
+      .moyen-digital-ring-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 8px solid transparent;
+        border-top: 8px solid #f49cc8;
+        border-right: 8px solid #ba94fd;
+      }
+
+      .moyen-digital-ring.animate-spin .moyen-digital-ring-inner {
+        animation: moyen-spin 8s linear infinite;
+      }
+
+      .moyen-digital-ring-middle {
+        position: absolute;
+        width: 70%;
+        height: 70%;
+        left: 15%;
+        top: 15%;
+        border-radius: 50%;
+        border: 6px solid transparent;
+        border-top: 6px solid #eee8fc;
+        border-left: 6px solid #f28ba8;
+      }
+
+      .moyen-digital-ring.animate-spin .moyen-digital-ring-middle {
+        animation: moyen-spin 6s linear infinite reverse;
+      }
+
+      .moyen-digital-ring-center {
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        left: 30%;
+        top: 30%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f49cc8, #f28ba8);
+        box-shadow: 0 0 15px rgba(244, 156, 200, 0.6);
+      }
+
+      .moyen-digital-ring.animate-pulse .moyen-digital-ring-center {
+        animation: moyen-pulse 3s ease-in-out infinite;
+      }
+
+      .moyen-couple-rings {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        right: 15%;
+        bottom: 5%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: scale(0.6);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .moyen-couple-rings.animate {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .moyen-couple-ring-left {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 10px solid #f49cc8;
+        transform: translateX(-20px);
+      }
+
+      .moyen-couple-ring-right {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 10px solid #7166ee;
+        transform: translateX(20px);
+      }
+
+      .moyen-couple-rings.animate-move .moyen-couple-ring-left {
+        animation: moyen-ring-left 8s ease-in-out infinite;
+      }
+
+      .moyen-couple-rings.animate-move .moyen-couple-ring-right {
+        animation: moyen-ring-right 8s ease-in-out infinite;
+      }
+
+      .moyen-orbit-particle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      .moyen-orbit-particle::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #fff;
+        border-radius: 50%;
+        top: -7.5px;
+        left: calc(50% - 7.5px);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+
+      .moyen-digital-ring.animate-spin .moyen-orbit-1 {
+        animation: moyen-spin 5s linear infinite;
+      }
+
+      .moyen-digital-ring.animate-spin .moyen-orbit-2 {
+        animation: moyen-spin 7s linear infinite;
+      }
+
+      .moyen-digital-ring.animate-spin .moyen-orbit-3 {
+        animation: moyen-spin 9s linear infinite reverse;
+      }
+
+      @keyframes moyen-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes moyen-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes moyen-spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes moyen-orbit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes moyen-ring-left {
+        0%,
+        100% {
+          transform: translateX(-30px);
+        }
+        50% {
+          transform: translateX(-10px);
+        }
+      }
+
+      @keyframes moyen-ring-right {
+        0%,
+        100% {
+          transform: translateX(30px);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+      }
+
+      .moyen-sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+        opacity: 0;
+        z-index: 1;
+      }
+
+      .moyen-app-section.animate .moyen-sparkle {
+        animation: moyen-sparkle linear infinite;
+      }
+
+      @keyframes moyen-sparkle {
+        0% {
+          transform: scale(0) translateY(0);
+          opacity: 0;
+        }
+        20% {
+          transform: scale(1) translateY(-5px);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0) translateY(-20px);
+          opacity: 0;
+        }
+      }
+
+      .moyen-flex-container {
+        display: flex;
+        width: 100%;
+      }
+
+      .moyen-col-left {
+        flex: 1;
+      }
+
+      .moyen-col-right {
+        flex: 1.5;
+      }
+
+      @media (max-width: 1200px) {
+        .moyen-mockup-1 {
+          right: 150px;
+        }
+        .moyen-mockup-2 {
+          right: 30px;
+        }
+        .moyen-mockup-3 {
+          right: 300px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .moyen-flex-container {
+          flex-direction: column;
+        }
+        .moyen-download-content {
+          margin-bottom: 80px;
+        }
+        .moyen-mockups-wrapper {
+          transform: translateY(0);
+          justify-content: center;
+          height: 400px;
+        }
+        .moyen-mockup-1 {
+          right: calc(50% - 20px);
+        }
+        .moyen-mockup-2 {
+          right: calc(50% - 200px);
+        }
+        .moyen-mockup-3 {
+          right: calc(50% + 160px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .moyen-title {
+          font-size: 42px;
+        }
+        .moyen-mockup-1 {
+          width: 220px;
+          height: 460px;
+        }
+        .moyen-mockup-2 {
+          width: 200px;
+          height: 420px;
+        }
+        .moyen-mockup-3 {
+          width: 180px;
+          height: 380px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .moyen-mockups-wrapper {
+          height: 300px;
+        }
+        .moyen-mockup-1 {
+          right: calc(50% - 10px);
+          width: 180px;
+          height: 380px;
+        }
+        .moyen-mockup-2,
+        .moyen-mockup-3 {
+          display: none;
+        }
+        .moyen-title {
+          font-size: 32px;
+        }
+        .moyen-subtitle {
+          font-size: 18px;
+        }
+        .moyen-store-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="moyen-app-section">
+      <!-- Digital rings with orbital animations -->
+      <div class="moyen-digital-ring moyen-digital-ring-1">
+        <div class="moyen-digital-ring-inner"></div>
+        <div class="moyen-digital-ring-middle"></div>
+        <div class="moyen-digital-ring-center"></div>
+        <div class="moyen-orbit-particle moyen-orbit-1"></div>
+        <div class="moyen-orbit-particle moyen-orbit-2"></div>
+        <div class="moyen-orbit-particle moyen-orbit-3"></div>
+      </div>
+
+      <div class="moyen-digital-ring moyen-digital-ring-2">
+        <div class="moyen-digital-ring-inner"></div>
+        <div class="moyen-digital-ring-middle"></div>
+        <div class="moyen-digital-ring-center"></div>
+        <div class="moyen-orbit-particle moyen-orbit-1"></div>
+        <div class="moyen-orbit-particle moyen-orbit-2"></div>
+      </div>
+
+      <!-- Decorative rings -->
+      <div class="moyen-ring moyen-ring-1"></div>
+      <div class="moyen-ring moyen-ring-2"></div>
+
+      <!-- Animated couple rings -->
+      <div class="moyen-couple-rings">
+        <div class="moyen-couple-ring-left"></div>
+        <div class="moyen-couple-ring-right"></div>
+      </div>
+
+      <div class="moyen-container">
+        <div class="moyen-flex-container">
+          <div class="moyen-col-left">
+            <div class="moyen-download-content">
+              <img
+                class="moyen-logo"
+                src="./assets/images/tethar-image/fav icon.png"
+                alt="Moyen Logo"
+              />
+
+              <div class="moyen-heading-wrapper">
+                <h1 class="moyen-title">Download Moyen Free App</h1>
+                <h2 class="moyen-subtitle">Get Access To Exclusive Offers!</h2>
+              </div>
+
+              <div class="moyen-download-options">
+                <!-- <img
+                  class="moyen-qr-code"
+                  src="/api/placeholder/150/150"
+                  alt="QR Code"
+                /> -->
+
+                <div class="moyen-store-buttons">
+                  <!-- App Store Button -->
+                  <div class="moyen-store-btn">
+                    <div class="moyen-store-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M17.5646 12.7603C17.594 15.2645 19.7249 16.3541 19.7543 16.3689C19.7358 16.4282 19.429 17.3742 18.7555 18.3499C18.1859 19.1781 17.5868 20.0023 16.6455 20.0172C15.7227 20.0321 15.4067 19.4576 14.346 19.4576C13.2868 19.4576 12.9399 20.0023 12.0756 20.0321C11.1678 20.0618 10.4737 19.1336 9.8968 18.3054C8.7239 16.6207 7.8147 13.5719 9.0199 11.5222C9.6172 10.4993 10.6857 9.85632 11.8418 9.84142C12.7267 9.82653 13.5616 10.4624 14.1018 10.4624C14.642 10.4624 15.675 9.68524 16.756 9.81164C17.0906 9.82653 18.2319 9.94304 18.9582 10.9631C18.8899 11.006 17.5414 11.7684 17.5646 12.7603ZM15.7403 8.33071C16.2148 7.744 16.53 6.9158 16.4171 6.08761C15.7079 6.11736 14.8245 6.5553 14.3354 7.1272C13.9035 7.63189 13.5175 8.4896 13.6449 9.29318C14.4316 9.35267 15.2643 8.91706 15.7403 8.33071Z"
+                          fill="#000"
+                        />
+                      </svg>
+                    </div>
+                    <div class="moyen-store-text">
+                      <span class="moyen-store-small">Download on the</span>
+                      <span class="moyen-store-large">App Store</span>
+                    </div>
+                  </div>
+
+                  <!-- Play Store Button -->
+                  <div class="moyen-store-btn">
+                    <div class="moyen-store-icon">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M4.17746 21.9217C4.23166 21.9948 4.30048 22.0561 4.38057 22.1022C4.46066 22.1483 4.54997 22.1783 4.64246 22.1907C4.73496 22.2032 4.82926 22.1979 4.91982 22.1751C5.01038 22.1524 5.09521 22.1127 5.16946 22.0582L13.1695 17.2797L5.79346 12.6662L4.17746 21.9217Z"
+                          fill="#EA4335"
+                        />
+                        <path
+                          d="M17.4735 14.0087L21.7485 11.5087C22.125 11.2877 22.3125 10.9642 22.3125 10.6142C22.3125 10.2642 22.125 9.94072 21.7485 9.71972L17.475 7.21972L13.1695 9.94822L17.4735 14.0087Z"
+                          fill="#FBBC04"
+                        />
+                        <path
+                          d="M4.17746 1.30573C4.17446 1.37773 4.17896 1.44973 4.18946 1.52098C4.20146 1.60023 4.22046 1.67873 4.24496 1.75348L5.86046 11.0085L13.1695 6.41748L5.16946 1.63948C5.09521 1.58498 5.01038 1.54521 4.91982 1.52248C4.82926 1.49974 4.73496 1.49448 4.64246 1.50691C4.54997 1.51935 4.46066 1.54938 4.38057 1.59548C4.30048 1.64157 4.23166 1.70284 4.17746 1.77598V1.30573Z"
+                          fill="#4285F4"
+                        />
+                        <path
+                          d="M13.1695 6.41699L19.1985 10.0005L13.1695 13.582V6.41699Z"
+                          fill="#34A853"
+                        />
+                      </svg>
+                    </div>
+                    <div class="moyen-store-text">
+                      <span class="moyen-store-small">GET IT ON</span>
+                      <span class="moyen-store-large">Google Play</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="moyen-col-right">
+            <div class="moyen-mockups-wrapper">
+              <img
+                class="moyen-mockup moyen-mockup-1"
+                src="./assets/images/tethar-image/mob01-removebg-preview.png"
+                alt="App Screenshot 1"
+              />
+              <img
+                class="moyen-mockup moyen-mockup-2"
+                src="./assets/images/tethar-image/mob03-removebg-preview (1).png"
+                alt="App Screenshot 2"
+              />
+              <img
+                class="moyen-mockup moyen-mockup-3"
+                src="./assets/images/tethar-image/mob03-removebg-preview.png"
+                alt="App Screenshot 3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Create sparkle elements dynamically
+      const moyenAppSection = document.querySelector('.moyen-app-section');
+      const sparkleCount = 30;
+
+      for (let i = 0; i < sparkleCount; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.classList.add('moyen-sparkle');
+
+        // Random position
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+
+        // Random size
+        const size = Math.random() * 6 + 2;
+        sparkle.style.width = size + 'px';
+        sparkle.style.height = size + 'px';
+
+        // Random animation duration and delay
+        const duration = Math.random() * 3 + 2;
+        sparkle.style.animationDuration = duration + 's';
+
+        const delay = Math.random() * 5;
+        sparkle.style.animationDelay = delay + 's';
+
+        moyenAppSection.appendChild(sparkle);
+      }
+
+      // Add interactive hover effects to mockups
+      const moyenMockups = document.querySelectorAll('.moyen-mockup');
+      moyenMockups.forEach((mockup) => {
+        mockup.addEventListener('mouseover', () => {
+          moyenMockups.forEach((m) => {
+            if (m !== mockup) {
+              m.style.transform = 'scale(0.92) translateY(10px)';
+              m.style.filter = 'brightness(0.7)';
+            } else {
+              m.style.transform = 'scale(1.08) translateY(-15px)';
+              m.style.zIndex = '10';
+              m.style.boxShadow = '0 30px 60px rgba(0, 0, 0, 0.4)';
+            }
+          });
+        });
+
+        mockup.addEventListener('mouseout', () => {
+          moyenMockups.forEach((m) => {
+            m.style.transform = '';
+            m.style.filter = '';
+            m.style.zIndex = '';
+            m.style.boxShadow = '';
+          });
+        });
+      });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px',
+      };
+
+      const animateOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Main section animation
+            entry.target.classList.add('animate');
+
+            // Animate children elements
+            const title = entry.target.querySelector('.moyen-title');
+            const logo = entry.target.querySelector('.moyen-logo');
+            const downloadContent = entry.target.querySelector(
+              '.moyen-download-content'
+            );
+            const downloadOptions = entry.target.querySelector(
+              '.moyen-download-options'
+            );
+            const rings = entry.target.querySelectorAll('.moyen-ring');
+            const digitalRings = entry.target.querySelectorAll(
+              '.moyen-digital-ring'
+            );
+            const coupleRings = entry.target.querySelector(
+              '.moyen-couple-rings'
+            );
+            const mockups = entry.target.querySelectorAll('.moyen-mockup');
+
+            if (title) title.classList.add('animate');
+            if (logo) logo.classList.add('animate');
+            if (downloadContent) downloadContent.classList.add('animate');
+            if (downloadOptions) downloadOptions.classList.add('animate');
+
+            // Delayed animations
+            setTimeout(() => {
+              rings.forEach((ring) => {
+                ring.classList.add('animate');
+                setTimeout(() => ring.classList.add('animate-pulse'), 1000);
+              });
+
+              digitalRings.forEach((ring) => {
+                ring.classList.add('animate');
+                setTimeout(() => {
+                  ring.classList.add('animate-spin');
+                  ring.classList.add('animate-pulse');
+                }, 1000);
+              });
+
+              if (coupleRings) {
+                coupleRings.classList.add('animate');
+                setTimeout(
+                  () => coupleRings.classList.add('animate-move'),
+                  1000
+                );
+              }
+
+              mockups.forEach((mockup, index) => {
+                setTimeout(() => {
+                  mockup.classList.add('animate');
+                  setTimeout(() => mockup.classList.add('animate-float'), 800);
+                }, 200 * index);
+              });
+            }, 300);
+
+            // Only run once
+            animateOnScroll.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Start observing the section
+      animateOnScroll.observe(moyenAppSection);
+    </script>
+  </body>
+</html>

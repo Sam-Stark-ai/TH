@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegant News Bar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 0;
+      }
+
+      .elegnews-container {
+        width: 100%;
+        background: linear-gradient(135deg, #2d077e 0%, #851e8b 100%);
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(45, 7, 126, 0.3);
+        position: relative;
+      }
+
+      .elegnews-header {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .elegnews-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .elegnews-logo-icon {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .elegnews-logo-text {
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .elegnews-live-indicator {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .elegnews-pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: #ff4444;
+        border-radius: 50%;
+        animation: elegnews-pulse 2s infinite;
+      }
+
+      @keyframes elegnews-pulse {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .elegnews-ticker-wrapper {
+        position: relative;
+        height: 60px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .elegnews-ticker-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .elegnews-breaking-badge {
+        background: #ff4444;
+        color: white;
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        margin-right: 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+        animation: elegnews-glow 3s ease-in-out infinite;
+      }
+
+      @keyframes elegnews-glow {
+        0%,
+        100% {
+          box-shadow: 0 2px 8px rgba(255, 68, 68, 0.3);
+        }
+        50% {
+          box-shadow: 0 2px 16px rgba(255, 68, 68, 0.6);
+        }
+      }
+
+      .elegnews-ticker-content {
+        white-space: nowrap;
+        animation: elegnews-scroll 25s linear infinite;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      @keyframes elegnews-scroll {
+        0% {
+          transform: translateX(0%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .elegnews-news-item {
+        display: inline-block;
+        margin-right: 60px;
+        position: relative;
+      }
+
+      .elegnews-news-item:not(:last-child)::after {
+        content: '•';
+        position: absolute;
+        right: -35px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 18px;
+      }
+
+      .elegnews-news-time {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 12px;
+        font-weight: 500;
+        margin-right: 8px;
+      }
+
+      .elegnews-controls {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 8px;
+      }
+
+      .elegnews-control-btn {
+        width: 28px;
+        height: 28px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .elegnews-control-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.1);
+      }
+
+      .elegnews-gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(45, 7, 126, 0.8) 0%,
+          transparent 10%,
+          transparent 90%,
+          rgba(133, 30, 139, 0.8) 100%
+        );
+        pointer-events: none;
+      }
+
+      .elegnews-paused .elegnews-ticker-content {
+        animation-play-state: paused;
+      }
+
+      @media (max-width: 768px) {
+        .elegnews-header {
+          padding: 8px 16px;
+        }
+
+        .elegnews-logo-text {
+          font-size: 16px;
+        }
+
+        .elegnews-ticker-content {
+          font-size: 14px;
+        }
+
+        .elegnews-breaking-badge {
+          padding: 6px 12px;
+          font-size: 11px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="elegnews-container" id="elegnews-main">
+      <div class="elegnews-header">
+        <div class="elegnews-logo">
+          <div class="elegnews-logo-icon">N</div>
+          <div class="elegnews-logo-text">NewsWire</div>
+        </div>
+        <div class="elegnews-live-indicator">
+          <div class="elegnews-pulse-dot"></div>
+          <span>LIVE</span>
+        </div>
+      </div>
+
+      <div class="elegnews-ticker-wrapper">
+        <div class="elegnews-ticker-container">
+          <div class="elegnews-breaking-badge">BREAKING</div>
+          <div class="elegnews-ticker-content" id="elegnews-ticker">
+            <span class="elegnews-news-item">
+              <span class="elegnews-news-time">2:45 PM</span>
+              Global markets surge as technology sector leads unprecedented
+              growth in Q3 earnings
+            </span>
+            <span class="elegnews-news-item">
+              <span class="elegnews-news-time">2:30 PM</span>
+              Climate summit reaches historic agreement on renewable energy
+              transition timeline
+            </span>
+            <span class="elegnews-news-item">
+              <span class="elegnews-news-time">2:15 PM</span>
+              Revolutionary AI breakthrough promises to transform healthcare
+              diagnostics
+            </span>
+            <span class="elegnews-news-item">
+              <span class="elegnews-news-time">2:00 PM</span>
+              International space station welcomes new crew for ambitious
+              research mission
+            </span>
+            <span class="elegnews-news-item">
+              <span class="elegnews-news-time">1:45 PM</span>
+              Major cybersecurity initiative launched to protect critical
+              infrastructure
+            </span>
+          </div>
+        </div>
+
+        <div class="elegnews-controls">
+          <button
+            class="elegnews-control-btn"
+            id="elegnews-pause-btn"
+            title="Pause/Resume"
+          >
+            ⏸
+          </button>
+          <button
+            class="elegnews-control-btn"
+            id="elegnews-speed-btn"
+            title="Speed"
+          >
+            1x
+          </button>
+        </div>
+
+        <div class="elegnews-gradient-overlay"></div>
+      </div>
+    </div>
+
+    <script>
+      class ElegantNewsBar {
+        constructor() {
+          this.container = document.getElementById('elegnews-main');
+          this.ticker = document.getElementById('elegnews-ticker');
+          this.pauseBtn = document.getElementById('elegnews-pause-btn');
+          this.speedBtn = document.getElementById('elegnews-speed-btn');
+          this.isPaused = false;
+          this.currentSpeed = 1;
+          this.speeds = [0.5, 1, 1.5, 2];
+          this.speedIndex = 1;
+
+          this.init();
+        }
+
+        init() {
+          this.setupEventListeners();
+        }
+
+        setupEventListeners() {
+          this.pauseBtn.addEventListener('click', () => this.togglePause());
+          this.speedBtn.addEventListener('click', () => this.changeSpeed());
+
+          // Pause on hover
+          this.container.addEventListener('mouseenter', () =>
+            this.pauseOnHover()
+          );
+          this.container.addEventListener('mouseleave', () =>
+            this.resumeOnLeave()
+          );
+        }
+
+        togglePause() {
+          this.isPaused = !this.isPaused;
+
+          if (this.isPaused) {
+            this.container.classList.add('elegnews-paused');
+            this.pauseBtn.innerHTML = '▶';
+            this.pauseBtn.title = 'Resume';
+          } else {
+            this.container.classList.remove('elegnews-paused');
+            this.pauseBtn.innerHTML = '⏸';
+            this.pauseBtn.title = 'Pause';
+          }
+        }
+
+        changeSpeed() {
+          this.speedIndex = (this.speedIndex + 1) % this.speeds.length;
+          this.currentSpeed = this.speeds[this.speedIndex];
+
+          this.ticker.style.animationDuration = `${60 / this.currentSpeed}s`;
+          this.speedBtn.textContent = `${this.currentSpeed}x`;
+        }
+
+        pauseOnHover() {
+          // Removed auto-pause on hover for continuous play
+        }
+
+        resumeOnLeave() {
+          // Removed auto-resume on leave for continuous play
+        }
+
+        updateNews(newsItems) {
+          const newsHTML = newsItems
+            .map(
+              (item) => `
+                    <span class="elegnews-news-item">
+                        <span class="elegnews-news-time">${item.time}</span>
+                        ${item.content}
+                    </span>
+                `
+            )
+            .join('');
+
+          this.ticker.innerHTML = newsHTML;
+        }
+      }
+
+      // Initialize the news bar
+      document.addEventListener('DOMContentLoaded', () => {
+        const newsBar = new ElegantNewsBar();
+
+        // Example of how to update news programmatically
+        // newsBar.updateNews([
+        //     { time: '3:00 PM', content: 'New headline here...' },
+        //     { time: '2:45 PM', content: 'Another news item...' }
+        // ]);
+      });
+    </script>
+  </body>
+</html>
